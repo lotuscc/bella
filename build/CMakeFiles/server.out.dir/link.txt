@@ -1,0 +1,1 @@
+/usr/bin/clang++-14  -Wall --std=c++17 -g -g  -rdynamic CMakeFiles/server.out.dir/server/main.cpp.o  -o server.out  -lpthread 

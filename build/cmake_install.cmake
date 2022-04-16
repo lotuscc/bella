@@ -1,4 +1,4 @@
-# Install script for directory: /home/lotuscc/lotuscc-Codes/muduo
+# Install script for directory: /home/lotuscc/lotuscc-Codes/muduo/bella
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lotuscc/lotuscc-Codes/muduo/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lotuscc/lotuscc-Codes/muduo/bella/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

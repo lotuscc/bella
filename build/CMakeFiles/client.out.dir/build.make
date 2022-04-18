@@ -60,15 +60,15 @@ include CMakeFiles/client.out.dir/flags.make
 CMakeFiles/client.out.dir/client/main.cpp.o: CMakeFiles/client.out.dir/flags.make
 CMakeFiles/client.out.dir/client/main.cpp.o: ../client/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.out.dir/client/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp
+	/usr/bin/clang++-14  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp
 
 CMakeFiles/client.out.dir/client/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.out.dir/client/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp > CMakeFiles/client.out.dir/client/main.cpp.i
+	/usr/bin/clang++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp > CMakeFiles/client.out.dir/client/main.cpp.i
 
 CMakeFiles/client.out.dir/client/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.out.dir/client/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp -o CMakeFiles/client.out.dir/client/main.cpp.s
+	/usr/bin/clang++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp -o CMakeFiles/client.out.dir/client/main.cpp.s
 
 # Object files for target client.out
 client_out_OBJECTS = \

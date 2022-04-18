@@ -10,5 +10,6 @@ CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpAcceptor.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpClient.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpConnector.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpServer.hpp
+CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_log.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../client/main.cpp
 

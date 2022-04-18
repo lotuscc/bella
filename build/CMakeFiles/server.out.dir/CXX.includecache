@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 ../src/ell_Channel.hpp
+algorithm
+-
 assert.h
 -
 functional
@@ -19,6 +21,8 @@ string
 -
 vector
 -
+ell_log.hpp
+../src/ell_log.hpp
 
 ../src/ell_EPoller.hpp
 assert.h
@@ -43,10 +47,10 @@ ell_Channel.hpp
 ../src/ell_Channel.hpp
 ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
-ell_TcpAcceptor.hpp
-../src/ell_TcpAcceptor.hpp
 ell_Socket.hpp
 ../src/ell_Socket.hpp
+ell_TcpAcceptor.hpp
+../src/ell_TcpAcceptor.hpp
 
 ../src/ell_EventLoop.hpp
 assert.h
@@ -77,7 +81,11 @@ netinet/in.h
 -
 
 ../src/ell_Socket.hpp
+cstddef
+-
 iostream
+-
+sys/socket.h
 -
 ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
@@ -87,6 +95,10 @@ ell_Channel.hpp
 ../src/ell_Channel.hpp
 ell_Socket.hpp
 ../src/ell_Socket.hpp
+ell_log.hpp
+../src/ell_log.hpp
+functional
+-
 
 ../src/ell_TcpClient.hpp
 ell_EventLoop.hpp
@@ -101,6 +113,8 @@ unistd.h
 ../src/ell_TcpConnector.hpp
 
 ../src/ell_TcpServer.hpp
+ell_Channel.hpp
+../src/ell_Channel.hpp
 ell_EventLoop.hpp
 ../src/ell_EventLoop.hpp
 ell_Ipv4Addr.hpp
@@ -109,6 +123,14 @@ ell_Socket.hpp
 ../src/ell_Socket.hpp
 ell_TcpAcceptor.hpp
 ../src/ell_TcpAcceptor.hpp
+functional
+-
+
+../src/ell_log.hpp
+cmath
+-
+iostream
+-
 
 /home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp
 functional

@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/lotuscc/lotuscc-Codes/muduo/bella/build",
-  "command": "/usr/bin/c++   -I/home/lotuscc/lotuscc-Codes/muduo/bella/./src  -Wall --std=c++17 -g -g   -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp",
+  "command": "/usr/bin/clang++-14   -I/home/lotuscc/lotuscc-Codes/muduo/bella/./src  -Wall --std=c++17 -g -g   -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp",
   "file": "/home/lotuscc/lotuscc-Codes/muduo/bella/client/main.cpp"
 },
 {
   "directory": "/home/lotuscc/lotuscc-Codes/muduo/bella/build",
-  "command": "/usr/bin/c++   -I/home/lotuscc/lotuscc-Codes/muduo/bella/./src  -Wall --std=c++17 -g -g   -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp",
+  "command": "/usr/bin/clang++-14   -I/home/lotuscc/lotuscc-Codes/muduo/bella/./src  -Wall --std=c++17 -g -g   -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp",
   "file": "/home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp"
 }
 ]

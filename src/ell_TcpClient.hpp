@@ -51,8 +51,6 @@ void ell_TcpClient::connect(ell_Ipv4Addr &serverAddr) {
 void ell_TcpClient::disconnect() {}
 
 void ell_TcpClient::loop() {
-    
-
     auto client_w = new ell_Channel(socket_->fd());
     client_w->enableWriting();
 

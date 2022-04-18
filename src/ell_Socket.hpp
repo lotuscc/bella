@@ -1,9 +1,10 @@
 #pragma once
 
+#include <cstddef>
 #include <iostream>
+#include <sys/socket.h>
 
 #include "ell_Ipv4Addr.hpp"
-
 
 class ell_Socket {
 private:
@@ -31,8 +32,10 @@ public:
     void send(const void *__buf, size_t __n);
     void recv(void *__buf, size_t __n);
 
-    static void recv_from(int fd, void *__buf, size_t __n);
-
+    inline static void recv_from(int fd, void *__buf, size_t __n);
+    inline static void send_to(int fd, const void *__buf, size_t __n);
+    inline static void connection_to(int __fd, const struct sockaddr *__addr,
+                                     socklen_t __len);
 };
 
 ell_Socket::ell_Socket() : sockfd_(::socket(PF_INET, SOCK_STREAM, 0)) {}
@@ -41,9 +44,9 @@ ell_Socket::~ell_Socket() {}
 
 void ell_Socket::connection(ell_Ipv4Addr &serverAddr) {
     auto x = ::connect(sockfd_, serverAddr.addr(), serverAddr.len());
-    std::cout << "connect reveive: " << x << std::endl;
+    LOG("connect reveive: {}", x);
     if (x < 0) {
-        std::cout << "connection failure " << std::endl;
+        LOG("connection failure ");
     }
 }
 
@@ -58,14 +61,23 @@ int ell_Socket::fd() const { return sockfd_; }
 void ell_Socket::send(const void *__buf, size_t __n) {
     int ret = ::send(sockfd_, __buf, __n, 0);
     if (ret == -1) {
-        std::cout << "send error!" << std::endl;
+        LOG("send error!");
     }
+}
+
+void ell_Socket::recv(void *__buf, size_t __n) {
+    ::recv(sockfd_, __buf, __n, 0);
+}
+
+void ell_Socket::send_to(int fd, const void *buf, size_t n) {
+    ::send(fd, buf, n, 0);
 }
 
 void ell_Socket::recv_from(int fd, void *__buf, size_t __n) {
     ::recv(fd, __buf, __n, 0);
 }
 
-void ell_Socket::recv(void *__buf, size_t __n) {
-    ::recv(sockfd_, __buf, __n, 0);
+void ell_Socket::connection_to(int __fd, const struct sockaddr *__addr,
+                               socklen_t __len) {
+    ::connect(__fd, __addr, __len);
 }

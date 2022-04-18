@@ -16,6 +16,7 @@ using ChannelList = ell_Channel::ChannelList;
 class ell_EventLoop {
 
     ChannelList activeChannels_;
+    std::unique_ptr<ell_EPoller> poller_;
 
 public:
     ell_EventLoop();
@@ -24,9 +25,6 @@ public:
     ell_EventLoop &operator=(const ell_EventLoop &) = delete;
 
     void loop();
-
-    std::unique_ptr<ell_EPoller> poller_;
-
     void append_channel(ell_Channel *channel);
 };
 
@@ -45,7 +43,7 @@ void ell_EventLoop::loop() {
 }
 
 void ell_EventLoop::append_channel(ell_Channel *channel) {
-    poller_->update(0, channel);
+    poller_->append_listenChannel(channel);
 }
 
 ell_EventLoop::ell_EventLoop() { poller_ = std::make_unique<ell_EPoller>(); }

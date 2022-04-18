@@ -14,8 +14,8 @@
 
 #include "ell_Channel.hpp"
 #include "ell_Ipv4Addr.hpp"
-#include "ell_TcpAcceptor.hpp"
 #include "ell_Socket.hpp"
+#include "ell_TcpAcceptor.hpp"
 
 using ChannelList = ell_Channel::ChannelList;
 using EventCallBack = ell_Channel::EventCallBack;
@@ -37,11 +37,9 @@ class ell_EPoller {
 
     int epollfd_;
     EventList events_;
-    ChannelMap channels_;
+    ChannelMap listenChannels_;
 
     static const int kInitEventListSize = 16;
-
-    int listenfd_;
 
 public:
     ell_EPoller(const ell_EPoller &) = delete;
@@ -51,10 +49,8 @@ public:
     void fillActiveChannels(int numEvents, ChannelList *activeChannels);
 
     void update(int operation, ell_Channel *channel);
-
-    void set_listenfd(int listenfd) { listenfd_ = listenfd; }
-
-    void receive(int fd);
+    void append_listenChannel(ell_Channel *listenChannel);
+    void remove_listenChannel(ell_Channel *listenChannel);
 
     ell_EPoller();
     ~ell_EPoller();
@@ -73,7 +69,7 @@ void ell_EPoller::poll(int timeoutMs, ChannelList *activeChannels) {
     int numEvents = ::epoll_wait(epollfd_, &*events_.begin(),
                                  static_cast<int>(events_.size()), timeoutMs);
 
-    std::cout << "reveive events ! numEvent: " << numEvents << std::endl;
+    LOG("reveive events ! numEvent: {}", numEvents);
     //
     fillActiveChannels(numEvents, activeChannels);
 }
@@ -81,80 +77,67 @@ void ell_EPoller::poll(int timeoutMs, ChannelList *activeChannels) {
 void ell_EPoller::fillActiveChannels(int numEvents,
                                      ChannelList *activeChannels) {
     for (int i = 0; i < numEvents; ++i) {
-
-        if (events_[i].data.fd == listenfd_) {
-            // channel->set_readCallBack();
-            // new connection
-            // channel->set_readCallBack();
-
-            // std::cout << "new connection" << std::endl;
-
-            // activeChannels->push_back(channel);
-            auto client = ell_TcpAcceptor::accept(listenfd_);
-
-            update(0, client);
-
-            // activeChannels->push_back(client);
-
+        auto newfd = events_[i].data.fd;
+        // new connection
+        if (listenChannels_.count(newfd)) {
+            listenChannels_[newfd]->set_revents(events_[i].events);
+            activeChannels->push_back(listenChannels_[newfd]);
             continue;
+        } else {
+            // error
         }
-
-        // 填入fd
-        ell_Channel *channel = new ell_Channel(events_[i].data.fd);
-
-        // 填入revents
-        channel->set_revents(events_[i].events);
-
-        EventCallBack call = std::bind(&ell_EPoller::receive, this, channel->fd());
-
-        channel->set_readCallBack(call);
-
-        activeChannels->push_back(channel);
     }
 }
 
-void ell_EPoller::receive(int fd){
-    char buf[512];
-    memset(buf, '\0', sizeof buf);
-
-    ell_Socket::recv_from(fd, buf, sizeof buf);
-
-    std::cout << "receive:" << buf << "  from: " << fd <<std::endl;
-}
-
-
-// void ell_EPoller::set_listen_event(int listenfd) {
-//     this->listenfd_ = listenfd;
+// void ell_EPoller::update(int operation, ell_Channel *channel) {
+//     ell::println("{}: func {}: line {}", __FILE__, __func__, __LINE__);
 
 //     struct epoll_event event;
+//     int fd = channel->fd();
+//     // event.events = channel->events();
 //     event.events = EPOLLIN | EPOLLET;
-//     event.data.fd = listenfd;
+//     event.data.fd = fd;
 
-//     if (::epoll_ctl(epollfd_, EPOLL_CTL_ADD, listenfd, &event) < 0) {
+//     if (::epoll_ctl(epollfd_, EPOLL_CTL_ADD, fd, &event) < 0) {
+//         ell::println("{}: line {}: epoll ctl failure!", __FILE__, __LINE__);
 //     }
 // }
 
-void ell_EPoller::update(int operation, ell_Channel *channel) {
-    struct epoll_event event;
+void ell_EPoller::append_listenChannel(ell_Channel *listenChannel) {
+    LOG("append");
 
-    int fd = channel->fd();
-    // event.events = channel->events();
+    int fd = listenChannel->fd();
+
+    struct epoll_event event;
     event.events = EPOLLIN | EPOLLET;
     event.data.fd = fd;
 
-    if (::epoll_ctl(epollfd_, EPOLL_CTL_ADD, fd, &event) < 0) {
-        std::cout << "epoll ctl failure! " << std::endl;
+    if (listenChannels_.count(fd)) {
+        if (::epoll_ctl(epollfd_, EPOLL_CTL_MOD, fd, &event) < 0) {
+            LOG("epoll ctl failure!");
+        }
+    } else {
+        // insert
+        listenChannels_[fd] = listenChannel;
+
+        if (::epoll_ctl(epollfd_, EPOLL_CTL_ADD, fd, &event) < 0) {
+            LOG("epoll ctl failure!");
+        }
+    }
+
+    listenChannels_[fd] = listenChannel;
+}
+void ell_EPoller::remove_listenChannel(ell_Channel *listenChannel) {
+
+    int fd = listenChannel->fd();
+
+    struct epoll_event event;
+    event.events = EPOLLIN | EPOLLET;
+    event.data.fd = fd;
+
+    listenChannels_.erase(listenChannel->fd());
+
+    if (::epoll_ctl(epollfd_, EPOLL_CTL_DEL, fd, &event) < 0) {
+        LOG("epoll ctl failure!");
     }
 }
-
-// 注册 EPOLLIN 事件和 EPOLLET 事件
-// EPOLLIN： 数据（包括普通数据和优先数据）可读
-// EPOLLET： 采用 ET 模式，可读、可写只发送一次事件通知
-// static void addfd(int epollfd, int fd){
-//     epoll_event event;
-//     event.data.fd = fd;
-//     event.events = EPOLLIN | EPOLLET;
-//     epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &event);
-
-//     set_nonblocking(fd);
-// }

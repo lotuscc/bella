@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall --std=c++17 -g -g  -rdynamic CMakeFiles/client.out.dir/client/main.cpp.o  -o client.out  -lpthread 
+/usr/bin/clang++-14  -Wall --std=c++17 -g -g  -rdynamic CMakeFiles/client.out.dir/client/main.cpp.o  -o client.out  -lpthread 

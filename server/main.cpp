@@ -15,10 +15,16 @@ int main() {
 
     ell_Ipv4Addr local_addr;
 
+    EventCallBack call;
     auto server = new ell_TcpServer();
-    server->bind(local_addr);
-    server->listen();
 
+    server->bind(local_addr);
+
+    // set default callback
+    // server->setConnectionCallback(call);
+    // server->setMessageCallback(call);
+
+    server->listen();
     server->loop();
 
     return 0;

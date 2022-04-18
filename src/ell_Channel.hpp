@@ -1,12 +1,15 @@
 
 #pragma once
 
+#include <algorithm>
 #include <assert.h>
 #include <functional>
 #include <iostream>
 #include <poll.h>
 #include <string>
 #include <vector>
+
+#include "ell_log.hpp"
 
 // ell_Channel 不拥有 fd_ 的所有权
 // 相当与挂在 fd_ 上的一条观察通道，从某一个角度观察 fd_ 上的事件
@@ -27,8 +30,6 @@ private:
     const int fd_;
     int events_;
     int revents_;
-
-    void update();
 
     void sayhello() { std::cout << "hello in Channel" << std::endl; }
 
@@ -102,21 +103,21 @@ void ell_Channel::set_errorCallBack(EventCallBack callback) {
     errorCallBack_ = callback;
 }
 void ell_Channel::set_readCallBack(EventCallBack callback) {
-    readCallBack_ = callback;
-    std::cout << "set read" << std::endl;
+    readCallBack_ = std::move(callback);
+    LOG("set readcallback");
 }
 void ell_Channel::set_writeCallBack(EventCallBack callback) {
     writeCallBack_ = callback;
 }
 
-void ell_Channel::defaultCallBack(const std::string &s) {
-    std::cout << s << std::endl;
+void ell_Channel::defaultCallBack(const std::string &s) {    
+    LOG("default: ");
 }
 
 // 根据 revents_ 处理
 void ell_Channel::handleEvent() {
 
-    std::cout << "fd: " << fd_ << std::endl;
+    LOG("fd: {}", fd_);
 
     if ((revents_ & POLLHUP) && !(revents_ & POLLIN)) {
         if (closeCallBack_) {
@@ -125,8 +126,7 @@ void ell_Channel::handleEvent() {
     }
 
     if (revents_ & POLLNVAL) {
-        std::cout << "fd = " << fd_ << " Channel::handle_event() POLLNVAL"
-                  << std::endl;
+        LOG("fd = {}, Channel::handle_event() POLLNVAL", fd_);
     }
 
     if (revents_ & (POLLERR | POLLNVAL)) {
@@ -140,13 +140,8 @@ void ell_Channel::handleEvent() {
         }
     }
     if (revents_ & POLLOUT) {
-        std::cout << "write" << std::endl;
-        static int x = 1;
-        if (x == 1) {
-            if (writeCallBack_) {
-                ++x;
-                writeCallBack_();
-            }
+        if (writeCallBack_) {
+            writeCallBack_();
         }
     }
 }

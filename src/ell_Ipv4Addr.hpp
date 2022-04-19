@@ -13,8 +13,8 @@ public:
     ell_Ipv4Addr(const char *ip = "127.0.0.1", int port = 9999);
     ~ell_Ipv4Addr();
 
-    ell_Ipv4Addr(const ell_Ipv4Addr &) = delete;
-    ell_Ipv4Addr &operator=(const ell_Ipv4Addr &) = delete;
+    // ell_Ipv4Addr(const ell_Ipv4Addr &) = delete;
+    // ell_Ipv4Addr &operator=(const ell_Ipv4Addr &) = delete;
 
     struct sockaddr *addr(void);
     socklen_t len(void);

@@ -5,6 +5,7 @@
 #include <sys/socket.h>
 
 #include "ell_Ipv4Addr.hpp"
+#include "ell_log.hpp"
 
 class ell_Socket {
 private:
@@ -12,6 +13,7 @@ private:
 
 public:
     ell_Socket();
+    ell_Socket(int fd);
     ~ell_Socket();
 
     ell_Socket(const ell_Socket &) = delete;
@@ -39,6 +41,8 @@ public:
 };
 
 ell_Socket::ell_Socket() : sockfd_(::socket(PF_INET, SOCK_STREAM, 0)) {}
+
+ell_Socket::ell_Socket(int fd) : sockfd_(fd) {}
 
 ell_Socket::~ell_Socket() {}
 

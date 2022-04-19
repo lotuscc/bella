@@ -5,21 +5,17 @@
 #include "ell_Ipv4Addr.hpp"
 #include "ell_Socket.hpp"
 #include "ell_TcpAcceptor.hpp"
+#include "ell_TcpConnector.hpp"
 #include <functional>
-
-using ConnectionCallback = std::function<void(int fd, ell_Ipv4Addr *peerAddr)>;
-
-using MessageCallback = ell_Channel::EventCallBack;
-// using WriteCompleteCallback = ell_Channel::EventCallBack;
+#include <unordered_map>
 
 class ell_TcpServer {
 private:
     ell_EventLoop *loop_;
     ell_TcpAcceptor *acceptor_;
+    ell_Ipv4Addr localAddr_;
 
-    // ConnectionCallback connectionCallback_;
-    MessageCallback messageCallback_;
-    // WriteCompleteCallback writeCompleteCallback_;
+    std::map<int, ell_TcpConnector *> Connectors_;
 
 public:
     ell_TcpServer();
@@ -29,28 +25,22 @@ public:
     void listen();
     void loop();
 
-    void defaultNewConnectionCallback(void);
-    void defaultMessageCallback(int fd, ell_Ipv4Addr *peerAddr);
-
-    // void setConnectionCallback(const ConnectionCallback &callback);
-    // void setMessageCallback(const MessageCallback &callback);
-    // void setWriteCompleteCallback(const WriteCompleteCallback &callback);
-
-    void receive(int fd);
+    void newConnection(int fd, ell_Ipv4Addr *peerAddr);
 };
 
 ell_TcpServer::ell_TcpServer() {
     loop_ = new ell_EventLoop();
     acceptor_ = new ell_TcpAcceptor();
 
-    acceptor_->setConnectionCallback(
-        std::bind(&ell_TcpServer::defaultMessageCallback, this,
-                  std::placeholders::_1, std::placeholders::_2));
+    acceptor_->setConnectionCallback(std::bind(&ell_TcpServer::newConnection,
+                                               this, std::placeholders::_1,
+                                               std::placeholders::_2));
 }
 
 ell_TcpServer::~ell_TcpServer() {}
 
 void ell_TcpServer::bind(ell_Ipv4Addr &localaddr) {
+    localAddr_ = localaddr;
     acceptor_->bind(localaddr);
 }
 
@@ -58,36 +48,19 @@ void ell_TcpServer::loop() { loop_->loop(); }
 
 void ell_TcpServer::listen() {
     acceptor_->listen();
-
     auto accept = acceptor_->listenChannel();
-
-    accept->enableReading();
-    accept->set_readCallBack(
-        std::bind(&ell_TcpServer::defaultNewConnectionCallback, this));
 
     // add listen event to epoll
     loop_->append_channel(accept);
 }
 
-void ell_TcpServer::receive(int fd) {
-    char buf[512];
-    memset(buf, '\0', sizeof buf);
+void ell_TcpServer::newConnection(int fd, ell_Ipv4Addr *peerAddr) {
+    // new client
+    auto client = new ell_TcpConnector(fd, localAddr_, *peerAddr);
 
-    ell_Socket::recv_from(fd, buf, sizeof buf);
+    Connectors_[fd] = client;
 
-    LOG("receive: {} from {}", buf, fd);
-}
-
-void ell_TcpServer::defaultNewConnectionCallback(void) {
-
-    auto newClient = acceptor_->accept();
-
-    newClient->enableReading();
-    newClient->set_readCallBack(messageCallback_);
-
-    loop_->append_channel(newClient);
-}
-
-void ell_TcpServer::defaultMessageCallback(int fd, ell_Ipv4Addr *peerAddr) {
-    messageCallback_ = std::bind(&ell_TcpServer::receive, this, fd);
+    // 分配TCP连接
+    //
+    loop_->append_channel(client->channel());
 }

@@ -89,12 +89,16 @@ sys/socket.h
 -
 ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
+ell_log.hpp
+../src/ell_log.hpp
 
 ../src/ell_TcpAcceptor.hpp
 ell_Channel.hpp
 ../src/ell_Channel.hpp
 ell_Socket.hpp
 ../src/ell_Socket.hpp
+ell_TcpConnector.hpp
+../src/ell_TcpConnector.hpp
 ell_log.hpp
 ../src/ell_log.hpp
 functional
@@ -107,10 +111,24 @@ ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
 ell_TcpConnector.hpp
 ../src/ell_TcpConnector.hpp
+ell_log.hpp
+../src/ell_log.hpp
 unistd.h
 -
 
 ../src/ell_TcpConnector.hpp
+functional
+-
+memory
+-
+ell_Channel.hpp
+../src/ell_Channel.hpp
+ell_Ipv4Addr.hpp
+../src/ell_Ipv4Addr.hpp
+ell_Socket.hpp
+../src/ell_Socket.hpp
+ell_buffer.hpp
+../src/ell_buffer.hpp
 
 ../src/ell_TcpServer.hpp
 ell_Channel.hpp
@@ -123,8 +141,14 @@ ell_Socket.hpp
 ../src/ell_Socket.hpp
 ell_TcpAcceptor.hpp
 ../src/ell_TcpAcceptor.hpp
+ell_TcpConnector.hpp
+../src/ell_TcpConnector.hpp
 functional
 -
+unordered_map
+-
+
+../src/ell_buffer.hpp
 
 ../src/ell_log.hpp
 cmath

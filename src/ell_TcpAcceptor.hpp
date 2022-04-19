@@ -3,9 +3,12 @@
 #include "ell_Channel.hpp"
 #include "ell_Socket.hpp"
 
+#include "ell_TcpConnector.hpp"
 #include "ell_log.hpp"
 #include <functional>
 
+// 只负责接受连接,并通过ConnectionCallback，将fd以及peerAddr回调给TcpServer
+// 不负责Tcp连接的分配
 
 class ell_TcpAcceptor {
 private:
@@ -17,6 +20,9 @@ private:
 
     ConnectionCallback connectionCallback_;
 
+    // 处理acceptChannel_上可读事件
+    void handread();
+
 public:
     ell_TcpAcceptor();
     ~ell_TcpAcceptor();
@@ -26,7 +32,6 @@ public:
 
     void bind(ell_Ipv4Addr &localaddr);
     void listen();
-    ell_Channel *accept();
     ell_Channel *listenChannel();
 
     // test
@@ -45,30 +50,29 @@ ell_TcpAcceptor::~ell_TcpAcceptor() {}
 void ell_TcpAcceptor::bind(ell_Ipv4Addr &localaddr) {
     acceptSocket_->bind(localaddr);
 }
-void ell_TcpAcceptor::listen() { acceptSocket_->listen(); }
+void ell_TcpAcceptor::listen() {
+    acceptSocket_->listen();
 
-ell_Channel *ell_TcpAcceptor::accept() {
-
-    auto client = new ell_Ipv4Addr();
-    int connfd =
-        ::accept(acceptSocket_->fd(), client->addr(), client->len_addr());
-    assert(connfd >= 0);
-
-    if (connectionCallback_) {
-        connectionCallback_(connfd, client);
-    }
-
-    LOG("new connection connfd: {}", connfd);
-
-    ell_Channel *newClient = new ell_Channel(connfd);
-
-    return newClient;
+    acceptChannel_->enableReading();
+    acceptChannel_->set_readCallBack(
+        std::bind(&ell_TcpAcceptor::handread, this));
 }
 
-ell_Channel *ell_TcpAcceptor::listenChannel() {    
-    return acceptChannel_;
-}
+ell_Channel *ell_TcpAcceptor::listenChannel() { return acceptChannel_; }
 
 void ell_TcpAcceptor::setConnectionCallback(ConnectionCallback callback) {
     connectionCallback_ = callback;
+}
+
+// 当此acceptSocket_ 上发生可读事件时
+// 只有一种情况：有新连接到来
+void ell_TcpAcceptor::handread() {
+    auto client_addr = new ell_Ipv4Addr();
+    int connfd = ::accept(acceptSocket_->fd(), client_addr->addr(),
+                          client_addr->len_addr());
+    assert(connfd >= 0);
+
+    if (connectionCallback_) {
+        connectionCallback_(connfd, client_addr);
+    }
 }

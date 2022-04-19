@@ -31,7 +31,7 @@ public:
     void sayHello() {
         char buf[512];
         memset(buf, '\0', sizeof buf);
-        strcpy(buf, "hello, world!\n");
+        strcpy(buf, "hello, world!");
 
         LOG("send hello to server ");
 

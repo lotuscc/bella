@@ -103,18 +103,18 @@ void ell_Channel::set_errorCallBack(EventCallBack callback) {
     errorCallBack_ = callback;
 }
 void ell_Channel::set_readCallBack(EventCallBack callback) {
-    readCallBack_ = std::move(callback);
+    readCallBack_ = callback;
     LOG("set readcallback");
 }
 void ell_Channel::set_writeCallBack(EventCallBack callback) {
     writeCallBack_ = callback;
 }
 
-void ell_Channel::defaultCallBack(const std::string &s) {    
-    LOG("default: ");
+void ell_Channel::defaultCallBack(const std::string &s) {
+    LOG("default: {}", s);
 }
 
-// 根据 revents_ 处理
+// 根据 revents_ 处理对应事件
 void ell_Channel::handleEvent() {
 
     LOG("fd: {}", fd_);

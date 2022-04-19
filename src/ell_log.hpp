@@ -9,7 +9,6 @@
     {                                                                          \
         ell::println("func: {}, line: {} ", __func__, __LINE__);               \
         ell::println(__VA_ARGS__);                                             \
-        ell::println("\n");                                                    \
     }
 
 namespace ell {

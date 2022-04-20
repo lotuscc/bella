@@ -6,7 +6,7 @@
 
 一个简单Reactor架构的网络库。
 
-本项目采用的是*epoll*来实现的多路复用，因此首先介绍一下epoll的基本知识。
+本项目采用的是*epoll*来实现的多路复用，关于epoll等网络的基本知识来源于《Linux高性能服务器编程》。
 
 Reactor基本架构主要由 `Channel`,`EventLoop`,`EPoller` 三个关键部件组成。
 

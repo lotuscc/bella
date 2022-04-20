@@ -83,6 +83,7 @@ ell_Channel::~ell_Channel() {}
 int ell_Channel::fd() const { return fd_; }
 
 int ell_Channel::events() const { return events_; }
+
 void ell_Channel::set_revents(int revt) { revents_ = revt; }
 
 void ell_Channel::enableReading() { events_ |= kReadEvent; }

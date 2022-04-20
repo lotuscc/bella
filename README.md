@@ -16,6 +16,8 @@ Channel部件主要负责一个文件描述符上的事件处理。 EPoller部�
 
 事件处理的主要流程为：在EventLoop的loop中，先通过epoll_wait等待监听事件发生，然后循环处理对应的事件
 
+*[简单文档](https://lotuscc.gitbook.io/ell-wang-luo-ku/)*
+
 
 # Channel 简要介绍
 

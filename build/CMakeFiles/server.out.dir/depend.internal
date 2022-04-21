@@ -13,4 +13,5 @@ CMakeFiles/server.out.dir/server/main.cpp.o
  ../src/ell_TcpServer.hpp
  ../src/ell_buffer.hpp
  ../src/ell_log.hpp
+ ../src/ell_socketOps.hpp
  /home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <poll.h>
 #include <string>
+#include <sys/epoll.h>
 #include <vector>
 
 #include "ell_log.hpp"
@@ -120,27 +121,23 @@ void ell_Channel::handleEvent() {
 
     LOG("fd: {}", fd_);
 
-    if ((revents_ & POLLHUP) && !(revents_ & POLLIN)) {
+    if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
         if (closeCallBack_) {
             closeCallBack_();
         }
     }
 
-    if (revents_ & POLLNVAL) {
-        LOG("fd = {}, Channel::handle_event() POLLNVAL", fd_);
-    }
-
-    if (revents_ & (POLLERR | POLLNVAL)) {
+    if (revents_ & (EPOLLERR)) {
         if (errorCallBack_) {
             errorCallBack_();
         }
     }
-    if (revents_ & (POLLIN | POLLPRI | POLLRDHUP)) {
+    if (revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)) {
         if (readCallBack_) {
             readCallBack_();
         }
     }
-    if (revents_ & POLLOUT) {
+    if (revents_ & EPOLLOUT) {
         if (writeCallBack_) {
             writeCallBack_();
         }

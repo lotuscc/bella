@@ -1,11 +1,16 @@
 #pragma once
 
+#include <cassert>
+#include <cerrno>
 #include <cstddef>
+#include <cstring>
 #include <iostream>
+#include <memory>
 #include <sys/socket.h>
 
 #include "ell_Ipv4Addr.hpp"
 #include "ell_log.hpp"
+#include "ell_socketOps.hpp"
 
 class ell_Socket {
 private:
@@ -38,27 +43,31 @@ public:
     inline static void send_to(int fd, const void *__buf, size_t __n);
     inline static void connection_to(int __fd, const struct sockaddr *__addr,
                                      socklen_t __len);
+
+    inline static int create_defaultsocket(void);
 };
 
-ell_Socket::ell_Socket() : sockfd_(::socket(PF_INET, SOCK_STREAM, 0)) {}
+// 创建默认socket IPv4、非阻塞
+int ell_Socket::create_defaultsocket() {
+    return sockops::socket(PF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC,
+                           0);
+}
+
+ell_Socket::ell_Socket() : sockfd_(create_defaultsocket()) {}
 
 ell_Socket::ell_Socket(int fd) : sockfd_(fd) {}
 
 ell_Socket::~ell_Socket() {}
 
 void ell_Socket::connection(ell_Ipv4Addr &serverAddr) {
-    auto x = ::connect(sockfd_, serverAddr.addr(), serverAddr.len());
-    LOG("connect reveive: {}", x);
-    if (x < 0) {
-        LOG("connection failure ");
-    }
+    sockops::connect(sockfd_, serverAddr.addr(), serverAddr.len());
 }
 
 void ell_Socket::bind(ell_Ipv4Addr &localaddr) {
-    ::bind(sockfd_, localaddr.addr(), localaddr.len());
+    sockops::bind(sockfd_, localaddr.addr(), localaddr.len());
 }
 
-void ell_Socket::listen() { ::listen(sockfd_, 5); }
+void ell_Socket::listen() { sockops::listen(sockfd_, 5); }
 
 int ell_Socket::fd() const { return sockfd_; }
 
@@ -83,5 +92,5 @@ void ell_Socket::recv_from(int fd, void *__buf, size_t __n) {
 
 void ell_Socket::connection_to(int __fd, const struct sockaddr *__addr,
                                socklen_t __len) {
-    ::connect(__fd, __addr, __len);
+    sockops::connect(__fd, __addr, __len);
 }

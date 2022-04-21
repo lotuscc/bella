@@ -7,6 +7,7 @@
 #include "ell_TcpAcceptor.hpp"
 #include "ell_TcpConnector.hpp"
 #include <functional>
+#include <memory>
 #include <unordered_map>
 
 class ell_TcpServer {
@@ -27,7 +28,6 @@ public:
 
     void newConnection(int fd, ell_Ipv4Addr *peerAddr);
 };
-
 ell_TcpServer::ell_TcpServer() {
     loop_ = new ell_EventLoop();
     acceptor_ = new ell_TcpAcceptor();
@@ -59,7 +59,6 @@ void ell_TcpServer::newConnection(int fd, ell_Ipv4Addr *peerAddr) {
     auto client = new ell_TcpConnector(fd, localAddr_, *peerAddr);
 
     Connectors_[fd] = client;
-
     // 分配TCP连接
     //
     loop_->append_channel(client->channel());

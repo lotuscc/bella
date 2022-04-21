@@ -81,9 +81,17 @@ netinet/in.h
 -
 
 ../src/ell_Socket.hpp
+cassert
+-
+cerrno
+-
 cstddef
 -
+cstring
+-
 iostream
+-
+memory
 -
 sys/socket.h
 -
@@ -91,6 +99,8 @@ ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
 ell_log.hpp
 ../src/ell_log.hpp
+ell_socketOps.hpp
+../src/ell_socketOps.hpp
 
 ../src/ell_TcpAcceptor.hpp
 ell_Channel.hpp
@@ -145,6 +155,8 @@ ell_TcpConnector.hpp
 ../src/ell_TcpConnector.hpp
 functional
 -
+memory
+-
 unordered_map
 -
 
@@ -155,6 +167,16 @@ cmath
 -
 iostream
 -
+
+../src/ell_socketOps.hpp
+cstring
+-
+sys/socket.h
+-
+unistd.h
+-
+ell_log.hpp
+../src/ell_log.hpp
 
 /home/lotuscc/lotuscc-Codes/muduo/bella/server/main.cpp
 functional

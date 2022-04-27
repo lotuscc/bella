@@ -175,8 +175,12 @@ cstring
 -
 unistd.h
 -
+ell_inputBuffer.hpp
+../src/ell_inputBuffer.hpp
 ell_message.pb.h
 ../src/ell_message.pb.h
+ell_outputBuffer.hpp
+../src/ell_outputBuffer.hpp
 
 ../src/ell_TcpConnector.hpp
 functional
@@ -191,10 +195,12 @@ ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
 ell_Socket.hpp
 ../src/ell_Socket.hpp
-ell_buffer.hpp
-../src/ell_buffer.hpp
+ell_inputBuffer.hpp
+../src/ell_inputBuffer.hpp
 ell_message.pb.h
 ../src/ell_message.pb.h
+ell_outputBuffer.hpp
+../src/ell_outputBuffer.hpp
 
 ../src/ell_TcpServer.hpp
 ell_Channel.hpp
@@ -216,9 +222,11 @@ memory
 unordered_map
 -
 
-../src/ell_buffer.hpp
+../src/ell_inputBuffer.hpp
 ell_log.hpp
 ../src/ell_log.hpp
+ell_message.pb.h
+../src/ell_message.pb.h
 ell_socketOps.hpp
 ../src/ell_socketOps.hpp
 cstring
@@ -232,6 +240,20 @@ vector
 cmath
 -
 iostream
+-
+
+../src/ell_outputBuffer.hpp
+ell_log.hpp
+../src/ell_log.hpp
+ell_message.pb.h
+../src/ell_message.pb.h
+ell_socketOps.hpp
+../src/ell_socketOps.hpp
+cstring
+-
+string
+-
+vector
 -
 
 ../src/ell_socketOps.hpp

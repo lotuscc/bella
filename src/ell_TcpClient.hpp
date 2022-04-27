@@ -8,7 +8,9 @@
 #include <cstring>
 #include <unistd.h>
 
+#include "ell_inputBuffer.hpp"
 #include "ell_message.pb.h"
+#include "ell_outputBuffer.hpp"
 
 using EventCallBack = ell_Channel::EventCallBack;
 
@@ -17,6 +19,8 @@ private:
     ell_EventLoop *loop_;
     ell_TcpConnector *connector_;
     ell_Socket *socket_;
+    ell_outputBuffer outbuffer_;
+    ell_inputBuffer inbuffer_;
 
 public:
     ell_TcpClient();
@@ -67,21 +71,10 @@ void ell_TcpClient::loop() {
     message.set_type(1);
     message.set_content("hello, world!");
 
-    char buf[1024];
-    memset(buf, '\0', sizeof buf);
-
-    int32_t len = message.ByteSizeLong();
-
-    ::strncpy(buf, (char *)&len, sizeof(len));
-
-    message.SerializeToArray(buf + sizeof(len), len);
-
     while (true) {
-        // strcpy(buf, "hello, world!");
 
-        LOG("send {} bytes to server ", len);
-
-        socket_->send(buf, len + sizeof(len));
+        outbuffer_.writeMessage(message);
+        outbuffer_.send(socket_->fd());
 
         sleep(2);
     }

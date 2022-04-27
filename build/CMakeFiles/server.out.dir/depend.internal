@@ -16,7 +16,8 @@ CMakeFiles/server.out.dir/server/main.cpp.o
  ../src/ell_TcpClient.hpp
  ../src/ell_TcpConnector.hpp
  ../src/ell_TcpServer.hpp
- ../src/ell_buffer.hpp
+ ../src/ell_inputBuffer.hpp
  ../src/ell_log.hpp
+ ../src/ell_outputBuffer.hpp
  ../src/ell_socketOps.hpp
  /home/lotuscc/github_Project/bella/server/main.cpp

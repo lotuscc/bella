@@ -9,6 +9,9 @@
 
 #include "ell_message.pb.h"
 
+#include "ell_inputBuffer.hpp"
+#include "ell_outputBuffer.hpp"
+
 void ts_main() {
     ell_ts_pool pool;
 

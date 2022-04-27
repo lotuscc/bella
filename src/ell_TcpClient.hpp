@@ -5,6 +5,7 @@
 #include "ell_Message.hpp"
 #include "ell_TcpConnector.hpp"
 #include "ell_log.hpp"
+#include <cstring>
 #include <unistd.h>
 
 #include "ell_message.pb.h"
@@ -69,15 +70,18 @@ void ell_TcpClient::loop() {
     char buf[1024];
     memset(buf, '\0', sizeof buf);
 
-    auto len = message.ByteSizeLong();
-    message.SerializeToArray(buf, len);
+    int32_t len = message.ByteSizeLong();
+
+    ::strncpy(buf, (char *)&len, sizeof(len));
+
+    message.SerializeToArray(buf + sizeof(len), len);
 
     while (true) {
         // strcpy(buf, "hello, world!");
 
         LOG("send {} bytes to server ", len);
 
-        socket_->send(buf, len);
+        socket_->send(buf, len + sizeof(len));
 
         sleep(2);
     }

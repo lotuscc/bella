@@ -71,7 +71,11 @@ void ell_TcpConnector::defaultMessage(void) {
 
     ell::ell_message message;
 
-    auto pret = message.ParseFromArray(buf, ret);
+    int32_t len = *(int32_t*)(&buf);
+
+    LOG("message len: {} \n", len);
+
+    auto pret = message.ParseFromArray(buf+4, ret-4);
     if(!pret){
         LOG("ParseFromArray failture! \n");
     }else{

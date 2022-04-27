@@ -2,7 +2,7 @@
 
 主要参考muduo库：*[https://github.com/chenshuo/muduo](https://github.com/chenshuo/muduo)*
 
-主要参考资料：《Linux高性能服务器编程》《Linux多线程服务器端编程》
+主要参考资料：《Linux高性能服务器编程》《Linux多线程服务器端编程》 《C++并发编程实战》
 
 一个简单Reactor架构的网络库。
 

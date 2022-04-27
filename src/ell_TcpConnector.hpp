@@ -2,11 +2,13 @@
 
 #include <functional>
 #include <memory>
+#include <string>
 
 #include "ell_Channel.hpp"
 #include "ell_Ipv4Addr.hpp"
 #include "ell_Socket.hpp"
 #include "ell_buffer.hpp"
+#include "ell_message.pb.h"
 
 using ConnectionCallback = ell_Channel::EventCallBack;
 using MessageCallback = ell_Channel::EventCallBack;
@@ -15,8 +17,7 @@ using HighWaterMarkCallback = ell_Channel::EventCallBack;
 
 class ell_TcpConnector {
 private:
-    // ell_buffer *readBuffer;
-
+    ell_buffer buffer_;
     ell_Socket *socket_;
     ell_Channel *channel_;
 
@@ -58,19 +59,35 @@ ell_TcpConnector::ell_TcpConnector(int fd, ell_Ipv4Addr localAddr,
 ell_TcpConnector::~ell_TcpConnector() {}
 
 void ell_TcpConnector::defaultMessage(void) {
-    char buf[512];
-    memset(buf, '\0', sizeof buf);
 
-    ell_Socket::recv_from(socket_->fd(), buf, sizeof buf);
+    char buf[1024];
 
-    LOG("receive: {} from {} \n", buf, socket_->fd());
+   auto ret = sockops::recv(socket_->fd(), buf, sizeof(buf), 0);
+
+    // buffer_.recv(socket_->fd());
+    // std::string msg = buffer_.readMessage();
+
+    LOG("receive {} bytes \n", ret);
+
+    ell::ell_message message;
+
+    auto pret = message.ParseFromArray(buf, ret);
+    if(!pret){
+        LOG("ParseFromArray failture! \n");
+    }else{
+        auto magic = message.magic();
+        auto type = message.type();
+        auto content = message.content();
+
+        LOG("magic: {} type: {} content: {} \n", magic, type, content);
+    }
+
+    // LOG("receive {} bytes : {} from {} \n", ret, buf, socket_->fd());
 }
 
-ell_Channel *ell_TcpConnector::channel() {
-    return channel_;
-}
+ell_Channel *ell_TcpConnector::channel() { return channel_; }
 
-void ell_TcpConnector::handread() {}
-void ell_TcpConnector::handwrite() {}
+void ell_TcpConnector::handread() { buffer_.recv(socket_->fd()); }
+void ell_TcpConnector::handwrite() { buffer_.send(socket_->fd()); }
 void ell_TcpConnector::handleClose() {}
 void ell_TcpConnector::handleError() {}

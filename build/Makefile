@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test.out
+
+# Build rule for target.
+test.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test.out
+.PHONY : test.out
+
+# fast build rule for target.
+test.out/fast:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/build
+.PHONY : test.out/fast
+
+#=============================================================================
 # Target rules for targets named client.out
 
 # Build rule for target.
@@ -163,6 +176,39 @@ client/main.cpp.s:
 	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/client/main.cpp.s
 .PHONY : client/main.cpp.s
 
+protobuf/ell_message.pb.o: protobuf/ell_message.pb.cc.o
+
+.PHONY : protobuf/ell_message.pb.o
+
+# target to build an object file
+protobuf/ell_message.pb.cc.o:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/protobuf/ell_message.pb.cc.o
+	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.o
+	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o
+.PHONY : protobuf/ell_message.pb.cc.o
+
+protobuf/ell_message.pb.i: protobuf/ell_message.pb.cc.i
+
+.PHONY : protobuf/ell_message.pb.i
+
+# target to preprocess a source file
+protobuf/ell_message.pb.cc.i:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/protobuf/ell_message.pb.cc.i
+	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.i
+	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.i
+.PHONY : protobuf/ell_message.pb.cc.i
+
+protobuf/ell_message.pb.s: protobuf/ell_message.pb.cc.s
+
+.PHONY : protobuf/ell_message.pb.s
+
+# target to generate assembly for a file
+protobuf/ell_message.pb.cc.s:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/protobuf/ell_message.pb.cc.s
+	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.s
+	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.s
+.PHONY : protobuf/ell_message.pb.cc.s
+
 server/main.o: server/main.cpp.o
 
 .PHONY : server/main.o
@@ -190,6 +236,33 @@ server/main.cpp.s:
 	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/server/main.cpp.s
 .PHONY : server/main.cpp.s
 
+test/ts_test.o: test/ts_test.cpp.o
+
+.PHONY : test/ts_test.o
+
+# target to build an object file
+test/ts_test.cpp.o:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/test/ts_test.cpp.o
+.PHONY : test/ts_test.cpp.o
+
+test/ts_test.i: test/ts_test.cpp.i
+
+.PHONY : test/ts_test.i
+
+# target to preprocess a source file
+test/ts_test.cpp.i:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/test/ts_test.cpp.i
+.PHONY : test/ts_test.cpp.i
+
+test/ts_test.s: test/ts_test.cpp.s
+
+.PHONY : test/ts_test.s
+
+# target to generate assembly for a file
+test/ts_test.cpp.s:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/test/ts_test.cpp.s
+.PHONY : test/ts_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -197,15 +270,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... test.out"
 	@echo "... client.out"
 	@echo "... rebuild_cache"
 	@echo "... server.out"
 	@echo "... client/main.o"
 	@echo "... client/main.i"
 	@echo "... client/main.s"
+	@echo "... protobuf/ell_message.pb.o"
+	@echo "... protobuf/ell_message.pb.i"
+	@echo "... protobuf/ell_message.pb.s"
 	@echo "... server/main.o"
 	@echo "... server/main.i"
 	@echo "... server/main.s"
+	@echo "... test/ts_test.o"
+	@echo "... test/ts_test.i"
+	@echo "... test/ts_test.s"
 .PHONY : help
 
 

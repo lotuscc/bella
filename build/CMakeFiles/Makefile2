@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/lotuscc/lotuscc-Codes/muduo/bella/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test.out.dir/all
 all: CMakeFiles/client.out.dir/all
 all: CMakeFiles/server.out.dir/all
 
@@ -64,10 +65,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test.out.dir/clean
 clean: CMakeFiles/client.out.dir/clean
 clean: CMakeFiles/server.out.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test.out.dir
+
+# All Build rule for target.
+CMakeFiles/test.out.dir/all:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/depend
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=7,8,9 "Built target test.out"
+.PHONY : CMakeFiles/test.out.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test.out.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.out.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 0
+.PHONY : CMakeFiles/test.out.dir/rule
+
+# Convenience name for target.
+test.out: CMakeFiles/test.out.dir/rule
+
+.PHONY : test.out
+
+# clean rule for target.
+CMakeFiles/test.out.dir/clean:
+	$(MAKE) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/clean
+.PHONY : CMakeFiles/test.out.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/client.out.dir
@@ -76,12 +105,12 @@ clean: CMakeFiles/server.out.dir/clean
 CMakeFiles/client.out.dir/all:
 	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/depend
 	$(MAKE) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=1,2 "Built target client.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=1,2,3 "Built target client.out"
 .PHONY : CMakeFiles/client.out.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/client.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/client.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 0
 .PHONY : CMakeFiles/client.out.dir/rule
@@ -103,12 +132,12 @@ CMakeFiles/client.out.dir/clean:
 CMakeFiles/server.out.dir/all:
 	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/depend
 	$(MAKE) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=3,4 "Built target server.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles --progress-num=4,5,6 "Built target server.out"
 .PHONY : CMakeFiles/server.out.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/server.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/lotuscc-Codes/muduo/bella/build/CMakeFiles 0
 .PHONY : CMakeFiles/server.out.dir/rule

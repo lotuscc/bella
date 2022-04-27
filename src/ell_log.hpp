@@ -7,11 +7,11 @@
 
 #define LOG(...)                                                               \
     {                                                                          \
-        ell::println("func: {}, line: {} ", __func__, __LINE__);               \
-        ell::println(__VA_ARGS__);                                             \
+        ell_log::println("func: {}, line: {} ", __func__, __LINE__);               \
+        ell_log::println(__VA_ARGS__);                                             \
     }
 
-namespace ell {
+namespace ell_log {
 
 // void dealFilePath() {}
 

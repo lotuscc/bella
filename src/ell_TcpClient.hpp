@@ -2,9 +2,12 @@
 
 #include "ell_EventLoop.hpp"
 #include "ell_Ipv4Addr.hpp"
+#include "ell_Message.hpp"
 #include "ell_TcpConnector.hpp"
 #include "ell_log.hpp"
 #include <unistd.h>
+
+#include "ell_message.pb.h"
 
 using EventCallBack = ell_Channel::EventCallBack;
 
@@ -58,9 +61,24 @@ void ell_TcpClient::loop() {
     // client_w->set_writeCallBack(std::bind(&ell_TcpClient::sayHello, this));
 
     // loop_->append_channel(client_w);
+    ell::ell_message message;
+    message.set_magic(0x0717);
+    message.set_type(1);
+    message.set_content("hello, world!");
+
+    char buf[1024];
+    memset(buf, '\0', sizeof buf);
+
+    auto len = message.ByteSizeLong();
+    message.SerializeToArray(buf, len);
 
     while (true) {
-        sayHello();
+        // strcpy(buf, "hello, world!");
+
+        LOG("send {} bytes to server ", len);
+
+        socket_->send(buf, len);
+
         sleep(2);
     }
 

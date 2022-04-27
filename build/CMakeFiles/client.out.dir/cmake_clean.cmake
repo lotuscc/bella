@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/client.out.dir/client/main.cpp.o"
+  "CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.o"
   "client.out"
   "client.out.pdb"
 )

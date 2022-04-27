@@ -6,6 +6,40 @@
 
 #IncludeRegexTransform: 
 
+../protobuf/ell_message.pb.h
+limits
+-
+string
+-
+google/protobuf/port_def.inc
+-
+google/protobuf/port_undef.inc
+-
+google/protobuf/io/coded_stream.h
+-
+google/protobuf/arena.h
+-
+google/protobuf/arenastring.h
+-
+google/protobuf/generated_message_util.h
+-
+google/protobuf/metadata_lite.h
+-
+google/protobuf/generated_message_reflection.h
+-
+google/protobuf/message.h
+-
+google/protobuf/repeated_field.h
+-
+google/protobuf/extension_set.h
+-
+google/protobuf/unknown_field_set.h
+-
+google/protobuf/port_def.inc
+-
+google/protobuf/port_undef.inc
+-
+
 ../src/ell_Channel.hpp
 algorithm
 -
@@ -18,6 +52,8 @@ iostream
 poll.h
 -
 string
+-
+sys/epoll.h
 -
 vector
 -
@@ -80,6 +116,16 @@ cstring
 netinet/in.h
 -
 
+../src/ell_Message.hpp
+ell_socketOps.hpp
+../src/ell_socketOps.hpp
+cassert
+-
+cstdint
+-
+cstring
+-
+
 ../src/ell_Socket.hpp
 cassert
 -
@@ -119,17 +165,23 @@ ell_EventLoop.hpp
 ../src/ell_EventLoop.hpp
 ell_Ipv4Addr.hpp
 ../src/ell_Ipv4Addr.hpp
+ell_Message.hpp
+../src/ell_Message.hpp
 ell_TcpConnector.hpp
 ../src/ell_TcpConnector.hpp
 ell_log.hpp
 ../src/ell_log.hpp
 unistd.h
 -
+ell_message.pb.h
+../src/ell_message.pb.h
 
 ../src/ell_TcpConnector.hpp
 functional
 -
 memory
+-
+string
 -
 ell_Channel.hpp
 ../src/ell_Channel.hpp
@@ -139,6 +191,8 @@ ell_Socket.hpp
 ../src/ell_Socket.hpp
 ell_buffer.hpp
 ../src/ell_buffer.hpp
+ell_message.pb.h
+../src/ell_message.pb.h
 
 ../src/ell_TcpServer.hpp
 ell_Channel.hpp
@@ -161,6 +215,16 @@ unordered_map
 -
 
 ../src/ell_buffer.hpp
+ell_log.hpp
+../src/ell_log.hpp
+ell_socketOps.hpp
+../src/ell_socketOps.hpp
+cstring
+-
+string
+-
+vector
+-
 
 ../src/ell_log.hpp
 cmath
@@ -169,6 +233,8 @@ iostream
 -
 
 ../src/ell_socketOps.hpp
+cstddef
+-
 cstring
 -
 sys/socket.h

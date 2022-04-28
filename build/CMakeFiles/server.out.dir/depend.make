@@ -18,6 +18,7 @@ CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_TcpServer.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_inputBuffer.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_outputBuffer.hpp
+CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_shell.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_socketOps.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_pool.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_queue.hpp

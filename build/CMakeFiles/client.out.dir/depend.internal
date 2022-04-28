@@ -16,6 +16,7 @@ CMakeFiles/client.out.dir/client/main.cpp.o
  ../src/ell_inputBuffer.hpp
  ../src/ell_log.hpp
  ../src/ell_outputBuffer.hpp
+ ../src/ell_shell.hpp
  ../src/ell_socketOps.hpp
  ../src/ts/ell_ts_pool.hpp
  ../src/ts/ell_ts_queue.hpp

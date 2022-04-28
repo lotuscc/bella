@@ -1,32 +1,32 @@
 [
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/test/ts_test.cpp.o -c /home/lotuscc/github_Project/bella/test/ts_test.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/test/ts_test.cpp.o -c /home/lotuscc/github_Project/bella/test/ts_test.cpp",
   "file": "/home/lotuscc/github_Project/bella/test/ts_test.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
   "file": "/home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/client/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/client/main.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
   "file": "/home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/server/main.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
-  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc",
   "file": "/home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc"
 }
 ]

@@ -36,15 +36,6 @@ public:
     void sendMessage();
     void recvMessage();
 
-    void sayHello() {
-        char buf[512];
-        memset(buf, '\0', sizeof buf);
-        strcpy(buf, "hello, world!");
-
-        LOG("send hello to server ");
-
-        socket_->send(buf, sizeof buf);
-    }
 };
 
 ell_TcpClient::ell_TcpClient() {

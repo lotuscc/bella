@@ -1,1 +1,1 @@
-/usr/bin/g++ -Wall --std=c++20 -g -g -rdynamic CMakeFiles/server.out.dir/server/main.cpp.o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -o server.out  -Wl,-rpath,/usr/local/lib -lpthread /usr/local/lib/libprotobuf.so -lpthread /usr/local/lib/libprotobuf.so 
+/usr/bin/c++ -Wall --std=c++20 -g -g -rdynamic CMakeFiles/server.out.dir/server/main.cpp.o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -o server.out  -Wl,-rpath,/usr/local/lib -lpthread /usr/local/lib/libprotobuf.so -lpthread /usr/local/lib/libprotobuf.so 

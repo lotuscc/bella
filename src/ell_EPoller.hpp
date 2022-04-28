@@ -84,7 +84,7 @@ void ell_EPoller::append_listenChannel(ell_Channel *listenChannel) {
     int fd = listenChannel->fd();
 
     struct epoll_event event;
-    event.events = EPOLLIN | EPOLLET;
+    event.events = listenChannel->events();
     event.data.fd = fd;
 
     if (listenChannels_.count(fd)) {
@@ -107,7 +107,7 @@ void ell_EPoller::remove_listenChannel(ell_Channel *listenChannel) {
     int fd = listenChannel->fd();
 
     struct epoll_event event;
-    event.events = EPOLLIN | EPOLLET;
+    event.events = listenChannel->events();
     event.data.fd = fd;
 
     listenChannels_.erase(listenChannel->fd());

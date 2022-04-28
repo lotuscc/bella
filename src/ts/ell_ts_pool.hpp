@@ -32,7 +32,10 @@ class ell_ts_pool {
 
 public:
     ell_ts_pool() : done(false) {
-        unsigned const thread_count = std::thread::hardware_concurrency() + 3;
+        // unsigned const thread_count = std::thread::hardware_concurrency() +
+        // 3;
+
+        unsigned const thread_count = 4;
         try {
             for (unsigned i = 0; i < thread_count; ++i) {
                 threads.push_back(
@@ -52,9 +55,9 @@ public:
 
         std::packaged_task<result_type()> task(std::move(f));
         std::future<result_type> res(task.get_future());
-    
+
         work_queue.push(std::move(task));
-    
+
         return res;
     }
 };

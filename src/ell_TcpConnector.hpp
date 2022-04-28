@@ -8,6 +8,7 @@
 #include "ell_Ipv4Addr.hpp"
 #include "ell_Socket.hpp"
 #include "ell_inputBuffer.hpp"
+#include "ell_log.hpp"
 #include "ell_message.pb.h"
 #include "ell_outputBuffer.hpp"
 
@@ -54,24 +55,48 @@ ell_TcpConnector::ell_TcpConnector(int fd, ell_Ipv4Addr localAddr,
 
     socket_ = new ell_Socket(fd);
     channel_ = new ell_Channel(fd);
-    channel_->set_readCallBack(
-        std::bind(&ell_TcpConnector::defaultMessage, this));
+    channel_->enableReading();
+    channel_->set_readCallBack(std::bind(&ell_TcpConnector::handread, this));
+
+    // channel_->enableWriting();
+    channel_->set_writeCallBack(std::bind(&ell_TcpConnector::handwrite, this));
+
+    channel_->enableClosing();
+    channel_->set_closeCallBack(
+        std::bind(&ell_TcpConnector::handleClose, this));
+
+    channel_->set_errorCallBack(
+        std::bind(&ell_TcpConnector::handleError, this));
 }
 
 ell_TcpConnector::~ell_TcpConnector() {}
 
-void ell_TcpConnector::defaultMessage(void) {
-
-    inbuffer_.recv(socket_->fd());
-
-    ell::ell_message message;
-    if (inbuffer_.tryReadMessage(message)) {
-    }
-}
+void ell_TcpConnector::defaultMessage(void) {}
 
 ell_Channel *ell_TcpConnector::channel() { return channel_; }
 
-void ell_TcpConnector::handread() {}
-void ell_TcpConnector::handwrite() {}
-void ell_TcpConnector::handleClose() {}
-void ell_TcpConnector::handleError() {}
+void ell_TcpConnector::handread() {
+    inbuffer_.recv(socket_->fd());
+    ell::ell_message message;
+    if (inbuffer_.tryReadMessage(message)) {
+        // outbuffer_.writeMessage(message);
+        // outbuffer_.send(socket_->fd());
+    }
+}
+void ell_TcpConnector::handwrite() {
+    LOG("hand write! \n");
+    outbuffer_.send(socket_->fd());
+}
+void ell_TcpConnector::handleClose() {
+    LOG("hand close! \n");
+
+    // loop_->remove_Channel(channel_);
+    sockops::shutdown(socket_->fd(), SHUT_RDWR);
+
+    exit(1);
+}
+void ell_TcpConnector::handleError() {
+    LOG("hand error! \n");
+    // loop_->remove_Channel(channel_);
+    exit(1);
+}

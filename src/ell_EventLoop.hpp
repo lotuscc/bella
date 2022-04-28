@@ -26,6 +26,7 @@ public:
 
     void loop();
     void append_channel(ell_Channel *channel);
+    void remove_Channel(ell_Channel *channel);
 };
 
 void ell_EventLoop::loop() {
@@ -44,6 +45,10 @@ void ell_EventLoop::loop() {
 
 void ell_EventLoop::append_channel(ell_Channel *channel) {
     poller_->append_listenChannel(channel);
+}
+
+void ell_EventLoop::remove_Channel(ell_Channel *channel) {
+    poller_->remove_listenChannel(channel);
 }
 
 ell_EventLoop::ell_EventLoop() { poller_ = std::make_unique<ell_EPoller>(); }

@@ -49,7 +49,8 @@ public:
 
 // 创建默认socket IPv4、非阻塞
 int ell_Socket::create_defaultsocket() {
-    return sockops::socket(PF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC,
+    // SOCK_NONBLOCK
+    return sockops::socket(PF_INET, SOCK_STREAM  | SOCK_CLOEXEC,
                            0);
 }
 

@@ -25,8 +25,9 @@ public:
 
 private:
     static const int kNoneEvent = 0;
-    static const int kReadEvent = POLLIN;
-    static const int kWriteEvent = POLLOUT;
+    static const int kReadEvent = EPOLLIN;
+    static const int kWriteEvent = EPOLLOUT;
+    static const int kCloseEvent = EPOLLRDHUP;
 
     const int fd_;
     int events_;
@@ -64,6 +65,9 @@ public:
     void enableWriting();
     void disableWriting();
 
+    void enableClosing();
+    void disableClosing();
+
     void disableAll();
 
     bool isWriting() const;
@@ -93,6 +97,9 @@ void ell_Channel::disableReading() { events_ &= ~kReadEvent; }
 void ell_Channel::enableWriting() { events_ |= kWriteEvent; }
 void ell_Channel::disableWriting() { events_ &= ~kWriteEvent; }
 
+void ell_Channel::enableClosing() { events_ |= kCloseEvent; }
+void ell_Channel::disableClosing() { events_ &= ~kCloseEvent; }
+
 void ell_Channel::disableAll() { events_ = kNoneEvent; }
 
 bool ell_Channel::isWriting() const { return events_ & kWriteEvent; }
@@ -106,7 +113,6 @@ void ell_Channel::set_errorCallBack(EventCallBack callback) {
 }
 void ell_Channel::set_readCallBack(EventCallBack callback) {
     readCallBack_ = callback;
-    LOG("set readcallback");
 }
 void ell_Channel::set_writeCallBack(EventCallBack callback) {
     writeCallBack_ = callback;
@@ -119,25 +125,30 @@ void ell_Channel::defaultCallBack(const std::string &s) {
 // 根据 revents_ 处理对应事件
 void ell_Channel::handleEvent() {
 
-    LOG("fd: {}", fd_);
+    LOG("revents_: {}, fd: {}", revents_, fd_);
 
-    if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
+    // && !(revents_ & EPOLLIN)
+    if ((revents_ &  (EPOLLHUP | EPOLLRDHUP))) {
+        LOG("closeCallBack_");
         if (closeCallBack_) {
             closeCallBack_();
         }
     }
 
     if (revents_ & (EPOLLERR)) {
+        LOG("errorCallBack_");
         if (errorCallBack_) {
             errorCallBack_();
         }
     }
-    if (revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)) {
+    if (revents_ & (EPOLLIN | EPOLLPRI)) {
+        LOG("readCallBack_");
         if (readCallBack_) {
             readCallBack_();
         }
     }
     if (revents_ & EPOLLOUT) {
+        LOG("writeCallBack_");
         if (writeCallBack_) {
             writeCallBack_();
         }

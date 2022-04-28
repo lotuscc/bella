@@ -26,6 +26,8 @@ public:
     void recv(int fd);
     std::string readMessage();
     bool tryReadMessage(ell::ell_message &message);
+
+    bool istry(void);
 };
 
 ell_inputBuffer::ell_inputBuffer() { memset(output_data_, '\0', kBUFFERSIZE); }
@@ -38,7 +40,6 @@ void ell_inputBuffer::recv(int fd) {
         LOG("this is no free space!");
 
         // 将数据移动到Buffer前面
-
 
         return;
     }
@@ -81,4 +82,8 @@ bool ell_inputBuffer::tryReadMessage(ell::ell_message &message) {
     }
 
     return true;
+}
+
+bool ell_inputBuffer::istry(void) {
+    return (iWriteIdx_ - iReadIdx_) >= 40;
 }

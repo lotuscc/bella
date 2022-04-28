@@ -8,6 +8,8 @@
 
 本项目采用的是*epoll*来实现的多路复用，关于epoll等网络的基本知识来源于《Linux高性能服务器编程》。
 
+使用protobuf进行序列化与反序列化，采用线程池处理IO任务，采用输入输出双缓冲设计。
+
 Reactor基本架构主要由 `Channel`,`EventLoop`,`EPoller` 三个关键部件组成。
 
 Channel部件主要负责一个文件描述符上的事件处理。 EPoller部件主要负责采用epoll系统调用来实现同时监听多个文件描述符上的事件，并且获得对应的事件。 EventLoop部件主要负责循环处理EPoller返回的事件。

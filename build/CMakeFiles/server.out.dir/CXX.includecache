@@ -173,6 +173,8 @@ string
 -
 ell_Channel.h
 ../src/ell_Channel.h
+ell_EventLoop.h
+../src/ell_EventLoop.h
 ell_Ipv4Addr.h
 ../src/ell_Ipv4Addr.h
 ell_Socket.hpp

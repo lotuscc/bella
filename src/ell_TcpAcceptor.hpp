@@ -12,14 +12,11 @@
 // 只负责接受连接,并通过ConnectionCallback，将fd以及peerAddr回调给TcpServer
 // 不负责Tcp连接的分配
 
-// class ell_EventLoop;
-
 class ell_TcpAcceptor {
 private:
     ell_Socket *acceptSocket_;
     ell_Channel *acceptChannel_;
-
-    ell_EventLoop* loop_;
+    ell_EventLoop *loop_;
 
     using ConnectionCallback =
         std::function<void(int fd, ell_Ipv4Addr *peerAddr)>;
@@ -30,14 +27,12 @@ private:
     void handread();
 
 public:
-    ell_TcpAcceptor();
+    ell_TcpAcceptor(ell_EventLoop *loop, ell_Ipv4Addr& localAddr);
     ~ell_TcpAcceptor();
 
     ell_TcpAcceptor(const ell_TcpAcceptor &) = delete;
     ell_TcpAcceptor &operator=(const ell_TcpAcceptor &) = delete;
 
-    void bind(ell_Ipv4Addr &localaddr);
-    void listen();
     ell_Channel *listenChannel();
 
     // test
@@ -46,24 +41,20 @@ public:
     void setConnectionCallback(ConnectionCallback callback);
 };
 
-ell_TcpAcceptor::ell_TcpAcceptor() {
+ell_TcpAcceptor::ell_TcpAcceptor(ell_EventLoop *loop, ell_Ipv4Addr& localAddr) {
     acceptSocket_ = new ell_Socket();
-    loop_ = new ell_EventLoop();
-    acceptChannel_ = new ell_Channel(loop_, acceptSocket_->fd());
-}
-
-ell_TcpAcceptor::~ell_TcpAcceptor() {}
-
-void ell_TcpAcceptor::bind(ell_Ipv4Addr &localaddr) {
-    acceptSocket_->bind(localaddr);
-}
-void ell_TcpAcceptor::listen() {
+    
+    // 开启监听
+    acceptSocket_->bind(localAddr);
     acceptSocket_->listen();
 
+    acceptChannel_ = new ell_Channel(loop, acceptSocket_->fd());
     acceptChannel_->enableReading();
     acceptChannel_->set_readCallBack(
         std::bind(&ell_TcpAcceptor::handread, this));
 }
+
+ell_TcpAcceptor::~ell_TcpAcceptor() {}
 
 ell_Channel *ell_TcpAcceptor::listenChannel() { return acceptChannel_; }
 

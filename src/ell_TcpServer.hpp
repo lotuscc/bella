@@ -28,23 +28,19 @@ private:
     void appendhandler();
     // void handler func(ResponseWriter, *Request)();
 
-    
-
 public:
-    ell_TcpServer();
+    ell_TcpServer(ell_Ipv4Addr& localAddr);
     ~ell_TcpServer();
 
-    void bind(ell_Ipv4Addr &localaddr);
-    void listen();
     void loop();
 
     void newConnection(int fd, ell_Ipv4Addr *peerAddr);
 
     void setdefaultMessage(handerMessageCall call);
 };
-ell_TcpServer::ell_TcpServer() {
+ell_TcpServer::ell_TcpServer(ell_Ipv4Addr& localAddr) {
     loop_ = new ell_EventLoop();
-    acceptor_ = new ell_TcpAcceptor();
+    acceptor_ = new ell_TcpAcceptor(loop_, localAddr);
 
     acceptor_->setConnectionCallback(std::bind(&ell_TcpServer::newConnection,
                                                this, std::placeholders::_1,
@@ -53,22 +49,7 @@ ell_TcpServer::ell_TcpServer() {
 
 ell_TcpServer::~ell_TcpServer() {}
 
-void ell_TcpServer::bind(ell_Ipv4Addr &localaddr) {
-    localAddr_ = localaddr;
-    acceptor_->bind(localaddr);
-}
-
 void ell_TcpServer::loop() { loop_->loop(); }
-
-void ell_TcpServer::listen() {
-    acceptor_->listen();
-    auto accept = acceptor_->listenChannel();
-
-    // accept
-
-    // add listen event to epoll
-    loop_->append_channel(accept);
-}
 
 void ell_TcpServer::newConnection(int fd, ell_Ipv4Addr *peerAddr) {
     // new client

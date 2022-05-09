@@ -23,10 +23,10 @@ int main() {
     ell_Ipv4Addr local_addr;
 
     EventCallBack call;
-    auto server = new ell_TcpServer();
+    auto server = new ell_TcpServer(local_addr);
 
-    server->bind(local_addr);
-    server->listen();
+    // server->bind(local_addr);
+    // server->listen();
 
     server->setdefaultMessage(echo);
 

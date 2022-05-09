@@ -1,7 +1,7 @@
 
 
-#include "ell_EventLoop.hpp"
-#include "ell_Ipv4Addr.hpp"
+#include "ell_EventLoop.h"
+#include "ell_Ipv4Addr.h"
 #include "ell_Message.hpp"
 #include "ell_TcpConnector.hpp"
 #include "ell_log.hpp"
@@ -32,7 +32,7 @@ private:
 
     ell_Channel *channel_;
 
-    ell_Shell shell_;
+    ell_Shell* shell_;
 
     ts_queue<ell::ell_message> message_queue_;
 
@@ -67,6 +67,7 @@ ell_TcpClient::ell_TcpClient() {
     loop_ = new ell_EventLoop();
 
     channel_ = new ell_Channel(loop_, socket_->fd());
+    shell_ = new ell_Shell(loop_);
 
     channel_->enableReading();
     channel_->set_readCallBack(std::bind(&ell_TcpClient::handread, this));
@@ -79,7 +80,7 @@ ell_TcpClient::ell_TcpClient() {
 
     channel_->set_errorCallBack(std::bind(&ell_TcpClient::handleError, this));
 
-    shell_.setShellMessageCallBack(std::bind(&ell_TcpClient::handleShellMessage,
+    shell_->setShellMessageCallBack(std::bind(&ell_TcpClient::handleShellMessage,
                                              this, std::placeholders::_1));
 }
 
@@ -92,8 +93,8 @@ void ell_TcpClient::disconnect() {}
 
 void ell_TcpClient::loop() {
 
-    loop_->append_channel(channel_);
-    loop_->append_channel(shell_.channel());
+    // loop_->append_channel(channel_);
+    // loop_->append_channel(shell_->channel());
 
     // std::async(std::bind(&ell_TcpClient::sayhello, this));
 

@@ -5,7 +5,7 @@
 #include <string>
 
 #include "ell_Channel.h"
-#include "ell_Ipv4Addr.hpp"
+#include "ell_Ipv4Addr.h"
 #include "ell_Socket.hpp"
 #include "ell_inputBuffer.hpp"
 #include "ell_log.hpp"

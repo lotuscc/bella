@@ -1,7 +1,7 @@
 
 
-#include "ell_EventLoop.hpp"
-#include "ell_Ipv4Addr.hpp"
+#include "ell_EventLoop.h"
+#include "ell_Ipv4Addr.h"
 #include "ell_Message.hpp"
 #include "ell_TcpConnector.hpp"
 
@@ -13,6 +13,8 @@
 #include "ell_message.pb.h"
 #include "ell_outputBuffer.hpp"
 #include "ell_ts_pool.hpp"
+
+#include "ell_EventLoop.h"
 
 #include <chrono>
 #include <thread>
@@ -28,7 +30,7 @@ private:
     ShellMessageCallBack ShellMessageCallBack_;
 
 public:
-    ell_Shell();
+    ell_Shell(ell_EventLoop *loop);
     ~ell_Shell();
 
     void setShellMessageCallBack(ShellMessageCallBack callback) {
@@ -39,9 +41,9 @@ public:
     ell_Channel *channel();
 };
 
-ell_Shell::ell_Shell() {
+ell_Shell::ell_Shell(ell_EventLoop *loop) {
 
-    channel_ = new ell_Channel(nullptr, STDIN_FILENO);
+    channel_ = new ell_Channel(loop, STDIN_FILENO);
 
     channel_->enableReading();
     channel_->set_readCallBack(std::bind(&ell_Shell::handread, this));

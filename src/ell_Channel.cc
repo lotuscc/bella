@@ -15,13 +15,12 @@
 
 #include "ell_Channel.h"
 
+#include "ell_EventLoop.h"
+
 // ell_Channel 不拥有 fd_ 的所有权
 // 相当与挂在 fd_ 上的一条观察通道，从某一个角度观察 fd_ 上的事件
 // 一个 fd_ 可以拥有多个 ell_Channel，例如，一个 ell_Channel
 // 负责写，一个ell_Channel 负责读，等等
-
-// 前向声明
-// class ell_EventLoop;
 
 ell_Channel::ell_Channel(ell_EventLoop *loop, int fd)
     : loop_(loop), fd_(fd), events_(0), revents_(0) {}
@@ -38,18 +37,48 @@ void ell_Channel::enableReading() {
     events_ |= kReadEvent;
 
     if (loop_ != nullptr) {
-        // loop_->update_Channel(this);
+        loop_->update_Channel(this);
     }
 }
-void ell_Channel::disableReading() { events_ &= ~kReadEvent; }
+void ell_Channel::disableReading() {
+    events_ &= ~kReadEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
 
-void ell_Channel::enableWriting() { events_ |= kWriteEvent; }
-void ell_Channel::disableWriting() { events_ &= ~kWriteEvent; }
+void ell_Channel::enableWriting() {
+    events_ |= kWriteEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
+void ell_Channel::disableWriting() {
+    events_ &= ~kWriteEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
 
-void ell_Channel::enableClosing() { events_ |= kCloseEvent; }
-void ell_Channel::disableClosing() { events_ &= ~kCloseEvent; }
+void ell_Channel::enableClosing() {
+    events_ |= kCloseEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
+void ell_Channel::disableClosing() {
+    events_ &= ~kCloseEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
 
-void ell_Channel::disableAll() { events_ = kNoneEvent; }
+void ell_Channel::disableAll() {
+    events_ = kNoneEvent;
+    if (loop_ != nullptr) {
+        loop_->update_Channel(this);
+    }
+}
 
 bool ell_Channel::isWriting() const { return events_ & kWriteEvent; }
 bool ell_Channel::isReading() const { return events_ & kReadEvent; }

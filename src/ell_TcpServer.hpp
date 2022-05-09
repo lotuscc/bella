@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ell_Channel.h"
-#include "ell_EventLoop.hpp"
-#include "ell_Ipv4Addr.hpp"
+#include "ell_EventLoop.h"
+#include "ell_Ipv4Addr.h"
 #include "ell_Socket.hpp"
 #include "ell_TcpAcceptor.hpp"
 #include "ell_TcpConnector.hpp"

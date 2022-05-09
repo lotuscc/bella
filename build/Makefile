@@ -321,6 +321,72 @@ src/ell_EPoller.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EPoller.cc.s
 .PHONY : src/ell_EPoller.cc.s
 
+src/ell_EventLoop.o: src/ell_EventLoop.cc.o
+
+.PHONY : src/ell_EventLoop.o
+
+# target to build an object file
+src/ell_EventLoop.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EventLoop.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EventLoop.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o
+.PHONY : src/ell_EventLoop.cc.o
+
+src/ell_EventLoop.i: src/ell_EventLoop.cc.i
+
+.PHONY : src/ell_EventLoop.i
+
+# target to preprocess a source file
+src/ell_EventLoop.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EventLoop.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EventLoop.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EventLoop.cc.i
+.PHONY : src/ell_EventLoop.cc.i
+
+src/ell_EventLoop.s: src/ell_EventLoop.cc.s
+
+.PHONY : src/ell_EventLoop.s
+
+# target to generate assembly for a file
+src/ell_EventLoop.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EventLoop.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EventLoop.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EventLoop.cc.s
+.PHONY : src/ell_EventLoop.cc.s
+
+src/ell_Ipv4Addr.o: src/ell_Ipv4Addr.cc.o
+
+.PHONY : src/ell_Ipv4Addr.o
+
+# target to build an object file
+src/ell_Ipv4Addr.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Ipv4Addr.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o
+.PHONY : src/ell_Ipv4Addr.cc.o
+
+src/ell_Ipv4Addr.i: src/ell_Ipv4Addr.cc.i
+
+.PHONY : src/ell_Ipv4Addr.i
+
+# target to preprocess a source file
+src/ell_Ipv4Addr.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Ipv4Addr.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.i
+.PHONY : src/ell_Ipv4Addr.cc.i
+
+src/ell_Ipv4Addr.s: src/ell_Ipv4Addr.cc.s
+
+.PHONY : src/ell_Ipv4Addr.s
+
+# target to generate assembly for a file
+src/ell_Ipv4Addr.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Ipv4Addr.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s
+.PHONY : src/ell_Ipv4Addr.cc.s
+
 test/ts_test.o: test/ts_test.cpp.o
 
 .PHONY : test/ts_test.o
@@ -374,6 +440,12 @@ help:
 	@echo "... src/ell_EPoller.o"
 	@echo "... src/ell_EPoller.i"
 	@echo "... src/ell_EPoller.s"
+	@echo "... src/ell_EventLoop.o"
+	@echo "... src/ell_EventLoop.i"
+	@echo "... src/ell_EventLoop.s"
+	@echo "... src/ell_Ipv4Addr.o"
+	@echo "... src/ell_Ipv4Addr.i"
+	@echo "... src/ell_Ipv4Addr.s"
 	@echo "... test/ts_test.o"
 	@echo "... test/ts_test.i"
 	@echo "... test/ts_test.s"

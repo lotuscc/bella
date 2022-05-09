@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.out.dir/protobuf/ell_message.pb.cc.o"
   "CMakeFiles/client.out.dir/src/ell_Channel.cc.o"
   "CMakeFiles/client.out.dir/src/ell_EPoller.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_EventLoop.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o"
   "client.out"
   "client.out.pdb"
 )

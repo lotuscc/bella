@@ -20,6 +20,7 @@ class ell_ts_pool {
     std::vector<std::jthread> threads;
 
     void worker_thread() {
+
         while (!done) {
             work_t task;
             if (work_queue.try_pop(task)) {

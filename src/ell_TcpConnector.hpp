@@ -4,7 +4,7 @@
 #include <memory>
 #include <string>
 
-#include "ell_Channel.hpp"
+#include "ell_Channel.h"
 #include "ell_Ipv4Addr.hpp"
 #include "ell_Socket.hpp"
 #include "ell_inputBuffer.hpp"
@@ -33,6 +33,9 @@ private:
     HighWaterMarkCallback highWaterMarkCallback_;
 
 public:
+    using handerMessageCall =
+        std::function<void(ell::ell_message *message, ell::ell_message *ret)>;
+
     ell_TcpConnector(int fd, ell_Ipv4Addr localAddr, ell_Ipv4Addr peerAddr);
     ~ell_TcpConnector();
 
@@ -46,6 +49,9 @@ public:
 
     void defaultMessage(void);
 
+    handerMessageCall handerMessage;
+    void set_handerMessageCall(handerMessageCall call);
+
     ell_Channel *channel();
 };
 
@@ -54,7 +60,7 @@ ell_TcpConnector::ell_TcpConnector(int fd, ell_Ipv4Addr localAddr,
     : localAddr_(localAddr), peerAddr_(peerAddr) {
 
     socket_ = new ell_Socket(fd);
-    channel_ = new ell_Channel(fd);
+    channel_ = new ell_Channel(nullptr, fd);
     channel_->enableReading();
     channel_->set_readCallBack(std::bind(&ell_TcpConnector::handread, this));
 
@@ -81,11 +87,29 @@ void ell_TcpConnector::handread() {
     if (inbuffer_.tryReadMessage(message)) {
         // outbuffer_.writeMessage(message);
         // outbuffer_.send(socket_->fd());
+        ell::ell_message retm;
+
+        if (handerMessage) {
+            handerMessage(&message, &retm);
+            int32_t len = retm.ByteSizeLong();
+
+            LOG("len: {} \n", len);
+            // if (len > 0) {
+            outbuffer_.writeMessage(message);
+            outbuffer_.send(socket_->fd());
+            // }
+        }
     }
 }
+
+void ell_TcpConnector::set_handerMessageCall(handerMessageCall call) {
+    handerMessage = call;
+}
+
 void ell_TcpConnector::handwrite() {
     LOG("hand write! \n");
     outbuffer_.send(socket_->fd());
+    // channel_->disableWriting();
 }
 void ell_TcpConnector::handleClose() {
     LOG("hand close! \n");

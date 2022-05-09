@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef ELL_SOCKET_H
+#define ELL_SOCKET_H
+
 #include <cassert>
 #include <cerrno>
 #include <cstddef>
@@ -95,3 +98,6 @@ void ell_Socket::connection_to(int __fd, const struct sockaddr *__addr,
                                socklen_t __len) {
     sockops::connect(__fd, __addr, __len);
 }
+
+
+#endif ELL_SOCKET_H

@@ -12,37 +12,13 @@
 
 #include <iostream>
 
-#include "ell_Channel.hpp"
-#include "ell_Ipv4Addr.hpp"
-#include "ell_Socket.hpp"
-#include "ell_TcpAcceptor.hpp"
+#include "ell_Channel.h"
 
-using ChannelList = ell_Channel::ChannelList;
-using EventCallBack = ell_Channel::EventCallBack;
+#include "ell_EPoller.h"
 
-class ell_EPoller {
-    using EventList = std::vector<struct epoll_event>;
-    using ChannelMap = std::map<int, ell_Channel *>;
+// using ChannelList = ell_Channel::ChannelList;
+// using EventCallBack = ell_Channel::EventCallBack;
 
-    int epollfd_;
-    EventList events_;
-    ChannelMap listenChannels_;
-
-    static const int kInitEventListSize = 16;
-
-public:
-    ell_EPoller(const ell_EPoller &) = delete;
-    ell_EPoller &operator=(const ell_EPoller &) = delete;
-
-    void poll(int timeoutMs, ChannelList *activeChannels);
-    void fillActiveChannels(int numEvents, ChannelList *activeChannels);
-
-    void append_listenChannel(ell_Channel *listenChannel);
-    void remove_listenChannel(ell_Channel *listenChannel);
-
-    ell_EPoller();
-    ~ell_EPoller();
-};
 
 ell_EPoller::ell_EPoller() : epollfd_(::epoll_create1(EPOLL_CLOEXEC)) {
     events_ = std::vector<struct epoll_event>(kInitEventListSize);
@@ -78,6 +54,24 @@ void ell_EPoller::fillActiveChannels(int numEvents,
     }
 }
 
+void ell_EPoller::updateChannel(ell_Channel *channel) {
+    struct epoll_event event;
+    event.events = channel->events();
+    event.data.fd = channel->fd();
+
+    if (listenChannels_.count(channel->fd())) {
+        if (::epoll_ctl(epollfd_, EPOLL_CTL_MOD, channel->fd(), &event) < 0) {
+            LOG("epoll ctl failure!");
+        }
+    } else {
+        listenChannels_[channel->fd()] = channel;
+
+        if (::epoll_ctl(epollfd_, EPOLL_CTL_ADD, channel->fd(), &event) < 0) {
+            LOG("epoll ctl failure!");
+        }
+    }
+}
+
 void ell_EPoller::append_listenChannel(ell_Channel *listenChannel) {
     LOG("append");
 
@@ -100,7 +94,7 @@ void ell_EPoller::append_listenChannel(ell_Channel *listenChannel) {
         }
     }
 
-    listenChannels_[fd] = listenChannel;
+    // listenChannels_[fd] = listenChannel;
 }
 void ell_EPoller::remove_listenChannel(ell_Channel *listenChannel) {
 

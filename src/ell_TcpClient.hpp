@@ -66,7 +66,7 @@ ell_TcpClient::ell_TcpClient() {
     socket_ = new ell_Socket();
     loop_ = new ell_EventLoop();
 
-    channel_ = new ell_Channel(socket_->fd());
+    channel_ = new ell_Channel(loop_, socket_->fd());
 
     channel_->enableReading();
     channel_->set_readCallBack(std::bind(&ell_TcpClient::handread, this));
@@ -118,7 +118,9 @@ void ell_TcpClient::sayhello() {
         std::this_thread::sleep_for(ms);
 
         outbuffer_.writeMessage(message);
-        outbuffer_.send(socket_->fd());
+        // outbuffer_.send(socket_->fd());
+        channel_->enableWriting();
+        loop_->update_Channel(channel_);
     }
 }
 
@@ -132,6 +134,10 @@ void ell_TcpClient::handread() {
 void ell_TcpClient::handwrite() {
     LOG("hand write! \n");
     outbuffer_.send(socket_->fd());
+    
+    // 关闭可写
+    channel_->disableWriting();
+    loop_->update_Channel(channel_);
 }
 void ell_TcpClient::handleClose() {
     LOG("hand close! \n");

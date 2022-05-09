@@ -22,24 +22,25 @@ include_directories(
     ./protobuf
 )
 
+
+aux_source_directory(src DIR_LIBS_SRCS)
+aux_source_directory(src/ts DIR_LIBS_SRCS)
+aux_source_directory(protobuf DIR_LIBS_SRCS)
+
+
+
 # 把src目录下所有源文件写入变量DIR_SRCS
-aux_source_directory(./ DIR_SERVER_SRCS)
 aux_source_directory(server DIR_SERVER_SRCS)
-aux_source_directory(protobuf DIR_SERVER_SRCS)
 # 以DIR_SRCS为源文件生成目标文件a.out
-add_executable(server.out ${DIR_SERVER_SRCS})
+add_executable(server.out ${DIR_SERVER_SRCS} ${DIR_LIBS_SRCS})
 
 
-aux_source_directory(./ DIR_CLIENT_SRCS)
 aux_source_directory(client DIR_CLIENT_SRCS)
-aux_source_directory(protobuf DIR_CLIENT_SRCS)
-add_executable(client.out ${DIR_CLIENT_SRCS})
+add_executable(client.out ${DIR_CLIENT_SRCS} ${DIR_LIBS_SRCS})
 
 
-aux_source_directory(./ DIR_TEST_SRCS)
 aux_source_directory(test DIR_TEST_SRCS)
-aux_source_directory(protobuf DIR_TEST_SRCS)
-add_executable(test.out ${DIR_TEST_SRCS} )
+add_executable(test.out ${DIR_TEST_SRCS}  ${DIR_LIBS_SRCS})
 
 
 find_package(Threads)

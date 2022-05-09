@@ -255,6 +255,72 @@ server/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/server/main.cpp.s
 .PHONY : server/main.cpp.s
 
+src/ell_Channel.o: src/ell_Channel.cc.o
+
+.PHONY : src/ell_Channel.o
+
+# target to build an object file
+src/ell_Channel.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Channel.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Channel.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Channel.cc.o
+.PHONY : src/ell_Channel.cc.o
+
+src/ell_Channel.i: src/ell_Channel.cc.i
+
+.PHONY : src/ell_Channel.i
+
+# target to preprocess a source file
+src/ell_Channel.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Channel.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Channel.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Channel.cc.i
+.PHONY : src/ell_Channel.cc.i
+
+src/ell_Channel.s: src/ell_Channel.cc.s
+
+.PHONY : src/ell_Channel.s
+
+# target to generate assembly for a file
+src/ell_Channel.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Channel.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Channel.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Channel.cc.s
+.PHONY : src/ell_Channel.cc.s
+
+src/ell_EPoller.o: src/ell_EPoller.cc.o
+
+.PHONY : src/ell_EPoller.o
+
+# target to build an object file
+src/ell_EPoller.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EPoller.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EPoller.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EPoller.cc.o
+.PHONY : src/ell_EPoller.cc.o
+
+src/ell_EPoller.i: src/ell_EPoller.cc.i
+
+.PHONY : src/ell_EPoller.i
+
+# target to preprocess a source file
+src/ell_EPoller.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EPoller.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EPoller.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EPoller.cc.i
+.PHONY : src/ell_EPoller.cc.i
+
+src/ell_EPoller.s: src/ell_EPoller.cc.s
+
+.PHONY : src/ell_EPoller.s
+
+# target to generate assembly for a file
+src/ell_EPoller.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_EPoller.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_EPoller.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_EPoller.cc.s
+.PHONY : src/ell_EPoller.cc.s
+
 test/ts_test.o: test/ts_test.cpp.o
 
 .PHONY : test/ts_test.o
@@ -302,6 +368,12 @@ help:
 	@echo "... server/main.o"
 	@echo "... server/main.i"
 	@echo "... server/main.s"
+	@echo "... src/ell_Channel.o"
+	@echo "... src/ell_Channel.i"
+	@echo "... src/ell_Channel.s"
+	@echo "... src/ell_EPoller.o"
+	@echo "... src/ell_EPoller.i"
+	@echo "... src/ell_EPoller.s"
 	@echo "... test/ts_test.o"
 	@echo "... test/ts_test.i"
 	@echo "... test/ts_test.s"

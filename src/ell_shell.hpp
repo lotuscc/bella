@@ -41,7 +41,7 @@ public:
 
 ell_Shell::ell_Shell() {
 
-    channel_ = new ell_Channel(STDIN_FILENO);
+    channel_ = new ell_Channel(nullptr, STDIN_FILENO);
 
     channel_->enableReading();
     channel_->set_readCallBack(std::bind(&ell_Shell::handread, this));

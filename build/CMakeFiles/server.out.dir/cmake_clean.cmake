@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.out.dir/src/ell_EPoller.cc.o"
   "CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o"
   "CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o"
+  "CMakeFiles/server.out.dir/src/ell_Socket.cc.o"
   "server.out"
   "server.out.pdb"
 )

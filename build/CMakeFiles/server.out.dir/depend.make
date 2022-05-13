@@ -9,7 +9,7 @@ CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_Channel.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_EventLoop.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_Ipv4Addr.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_Message.hpp
-CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_Socket.hpp
+CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_Socket.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_TcpAcceptor.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_TcpClient.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_TcpConnector.hpp
@@ -20,6 +20,7 @@ CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_outputBuffer.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_shell.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_conn_pool.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_pool.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_queue.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/function_wrapper.hpp
@@ -43,4 +44,10 @@ CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o: ../src/ell_log.hpp
 
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o: ../src/ell_Ipv4Addr.cc
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o: ../src/ell_Ipv4Addr.h
+
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Ipv4Addr.h
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.cc
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.h
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_log.hpp
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_socketOps.hpp
 

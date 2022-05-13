@@ -387,6 +387,39 @@ src/ell_Ipv4Addr.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s
 .PHONY : src/ell_Ipv4Addr.cc.s
 
+src/ell_Socket.o: src/ell_Socket.cc.o
+
+.PHONY : src/ell_Socket.o
+
+# target to build an object file
+src/ell_Socket.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Socket.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Socket.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Socket.cc.o
+.PHONY : src/ell_Socket.cc.o
+
+src/ell_Socket.i: src/ell_Socket.cc.i
+
+.PHONY : src/ell_Socket.i
+
+# target to preprocess a source file
+src/ell_Socket.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Socket.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Socket.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Socket.cc.i
+.PHONY : src/ell_Socket.cc.i
+
+src/ell_Socket.s: src/ell_Socket.cc.s
+
+.PHONY : src/ell_Socket.s
+
+# target to generate assembly for a file
+src/ell_Socket.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Socket.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Socket.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Socket.cc.s
+.PHONY : src/ell_Socket.cc.s
+
 test/ts_test.o: test/ts_test.cpp.o
 
 .PHONY : test/ts_test.o
@@ -446,6 +479,9 @@ help:
 	@echo "... src/ell_Ipv4Addr.o"
 	@echo "... src/ell_Ipv4Addr.i"
 	@echo "... src/ell_Ipv4Addr.s"
+	@echo "... src/ell_Socket.o"
+	@echo "... src/ell_Socket.i"
+	@echo "... src/ell_Socket.s"
 	@echo "... test/ts_test.o"
 	@echo "... test/ts_test.i"
 	@echo "... test/ts_test.s"

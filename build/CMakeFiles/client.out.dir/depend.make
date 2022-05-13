@@ -6,7 +6,7 @@ CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_Channel.h
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_EventLoop.h
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_Ipv4Addr.h
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_Message.hpp
-CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_Socket.hpp
+CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_Socket.h
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpClient.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_TcpConnector.hpp
 CMakeFiles/client.out.dir/client/main.cpp.o: ../src/ell_inputBuffer.hpp
@@ -40,4 +40,10 @@ CMakeFiles/client.out.dir/src/ell_EventLoop.cc.o: ../src/ell_log.hpp
 
 CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o: ../src/ell_Ipv4Addr.cc
 CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o: ../src/ell_Ipv4Addr.h
+
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o: ../src/ell_Ipv4Addr.h
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.cc
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.h
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o: ../src/ell_log.hpp
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o: ../src/ell_socketOps.hpp
 

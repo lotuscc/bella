@@ -7,7 +7,7 @@ CMakeFiles/client.out.dir/client/main.cpp.o
  ../src/ell_EventLoop.h
  ../src/ell_Ipv4Addr.h
  ../src/ell_Message.hpp
- ../src/ell_Socket.hpp
+ ../src/ell_Socket.h
  ../src/ell_TcpClient.hpp
  ../src/ell_TcpConnector.hpp
  ../src/ell_inputBuffer.hpp
@@ -41,3 +41,9 @@ CMakeFiles/client.out.dir/src/ell_EventLoop.cc.o
 CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o
  /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc
  /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
+CMakeFiles/client.out.dir/src/ell_Socket.cc.o
+ /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
+ /home/lotuscc/github_Project/bella/src/ell_Socket.cc
+ /home/lotuscc/github_Project/bella/src/ell_Socket.h
+ /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp

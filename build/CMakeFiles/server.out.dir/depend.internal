@@ -13,12 +13,12 @@ CMakeFiles/server.out.dir/server/main.cpp.o
  ../src/ell_Socket.h
  ../src/ell_TcpAcceptor.hpp
  ../src/ell_TcpClient.hpp
- ../src/ell_TcpConnector.hpp
+ ../src/ell_TcpConnector.h
  ../src/ell_TcpServer.hpp
  ../src/ell_Works.hpp
- ../src/ell_inputBuffer.hpp
+ ../src/ell_inputBuffer.h
  ../src/ell_log.hpp
- ../src/ell_outputBuffer.hpp
+ ../src/ell_outputBuffer.h
  ../src/ell_shell.hpp
  ../src/ell_socketOps.hpp
  ../src/ts/ell_conn_pool.h
@@ -45,9 +45,46 @@ CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o
  /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc
  /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
+CMakeFiles/server.out.dir/src/ell_Serves.cc.o
+ ../protobuf/ell_message.pb.h
+ /home/lotuscc/github_Project/bella/src/ell_Channel.h
+ /home/lotuscc/github_Project/bella/src/ell_EventLoop.h
+ /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
+ /home/lotuscc/github_Project/bella/src/ell_Serves.cc
+ /home/lotuscc/github_Project/bella/src/ell_Serves.h
+ /home/lotuscc/github_Project/bella/src/ell_Socket.h
+ /home/lotuscc/github_Project/bella/src/ell_TcpConnector.h
+ /home/lotuscc/github_Project/bella/src/ell_inputBuffer.h
+ /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_outputBuffer.h
+ /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o
  /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
  /home/lotuscc/github_Project/bella/src/ell_Socket.cc
  /home/lotuscc/github_Project/bella/src/ell_Socket.h
  /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o
+ ../protobuf/ell_message.pb.h
+ /home/lotuscc/github_Project/bella/src/ell_Channel.h
+ /home/lotuscc/github_Project/bella/src/ell_EventLoop.h
+ /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.h
+ /home/lotuscc/github_Project/bella/src/ell_Socket.h
+ /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc
+ /home/lotuscc/github_Project/bella/src/ell_TcpConnector.h
+ /home/lotuscc/github_Project/bella/src/ell_inputBuffer.h
+ /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_outputBuffer.h
+ /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o
+ ../protobuf/ell_message.pb.h
+ /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc
+ /home/lotuscc/github_Project/bella/src/ell_inputBuffer.h
+ /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o
+ ../protobuf/ell_message.pb.h
+ /home/lotuscc/github_Project/bella/src/ell_log.hpp
+ /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc
+ /home/lotuscc/github_Project/bella/src/ell_outputBuffer.h
  /home/lotuscc/github_Project/bella/src/ell_socketOps.hpp

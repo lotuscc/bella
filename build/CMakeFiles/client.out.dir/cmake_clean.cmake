@@ -5,7 +5,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/client.out.dir/src/ell_EPoller.cc.o"
   "CMakeFiles/client.out.dir/src/ell_EventLoop.cc.o"
   "CMakeFiles/client.out.dir/src/ell_Ipv4Addr.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_Serves.cc.o"
   "CMakeFiles/client.out.dir/src/ell_Socket.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_TcpConnector.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_inputBuffer.cc.o"
+  "CMakeFiles/client.out.dir/src/ell_outputBuffer.cc.o"
   "client.out"
   "client.out.pdb"
 )

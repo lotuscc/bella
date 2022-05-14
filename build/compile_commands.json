@@ -26,8 +26,28 @@
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/src/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Serves.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_Serves.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
   "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/src/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Socket.cc",
   "file": "/home/lotuscc/github_Project/bella/src/ell_Socket.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/src/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/src/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/test.out.dir/src/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
@@ -61,8 +81,28 @@
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/src/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Serves.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_Serves.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
   "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/src/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Socket.cc",
   "file": "/home/lotuscc/github_Project/bella/src/ell_Socket.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/src/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/src/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/client.out.dir/src/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
@@ -96,8 +136,28 @@
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/src/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Serves.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_Serves.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
   "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/src/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Socket.cc",
   "file": "/home/lotuscc/github_Project/bella/src/ell_Socket.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build",
+  "command": "/usr/bin/c++  -I/home/lotuscc/github_Project/bella/./src -I/home/lotuscc/github_Project/bella/./src/ts -I/home/lotuscc/github_Project/bella/./protobuf -Wall --std=c++20 -g -g -o CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build",

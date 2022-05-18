@@ -453,6 +453,72 @@ src/ell_Socket.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Socket.cc.s
 .PHONY : src/ell_Socket.cc.s
 
+src/ell_TcpAcceptor.o: src/ell_TcpAcceptor.cc.o
+
+.PHONY : src/ell_TcpAcceptor.o
+
+# target to build an object file
+src/ell_TcpAcceptor.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpAcceptor.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpAcceptor.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpAcceptor.cc.o
+.PHONY : src/ell_TcpAcceptor.cc.o
+
+src/ell_TcpAcceptor.i: src/ell_TcpAcceptor.cc.i
+
+.PHONY : src/ell_TcpAcceptor.i
+
+# target to preprocess a source file
+src/ell_TcpAcceptor.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpAcceptor.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpAcceptor.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpAcceptor.cc.i
+.PHONY : src/ell_TcpAcceptor.cc.i
+
+src/ell_TcpAcceptor.s: src/ell_TcpAcceptor.cc.s
+
+.PHONY : src/ell_TcpAcceptor.s
+
+# target to generate assembly for a file
+src/ell_TcpAcceptor.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpAcceptor.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpAcceptor.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpAcceptor.cc.s
+.PHONY : src/ell_TcpAcceptor.cc.s
+
+src/ell_TcpClient.o: src/ell_TcpClient.cc.o
+
+.PHONY : src/ell_TcpClient.o
+
+# target to build an object file
+src/ell_TcpClient.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpClient.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpClient.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpClient.cc.o
+.PHONY : src/ell_TcpClient.cc.o
+
+src/ell_TcpClient.i: src/ell_TcpClient.cc.i
+
+.PHONY : src/ell_TcpClient.i
+
+# target to preprocess a source file
+src/ell_TcpClient.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpClient.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpClient.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpClient.cc.i
+.PHONY : src/ell_TcpClient.cc.i
+
+src/ell_TcpClient.s: src/ell_TcpClient.cc.s
+
+.PHONY : src/ell_TcpClient.s
+
+# target to generate assembly for a file
+src/ell_TcpClient.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpClient.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpClient.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpClient.cc.s
+.PHONY : src/ell_TcpClient.cc.s
+
 src/ell_TcpConnector.o: src/ell_TcpConnector.cc.o
 
 .PHONY : src/ell_TcpConnector.o
@@ -485,6 +551,72 @@ src/ell_TcpConnector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpConnector.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.s
 .PHONY : src/ell_TcpConnector.cc.s
+
+src/ell_TcpServer.o: src/ell_TcpServer.cc.o
+
+.PHONY : src/ell_TcpServer.o
+
+# target to build an object file
+src/ell_TcpServer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpServer.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpServer.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpServer.cc.o
+.PHONY : src/ell_TcpServer.cc.o
+
+src/ell_TcpServer.i: src/ell_TcpServer.cc.i
+
+.PHONY : src/ell_TcpServer.i
+
+# target to preprocess a source file
+src/ell_TcpServer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpServer.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpServer.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpServer.cc.i
+.PHONY : src/ell_TcpServer.cc.i
+
+src/ell_TcpServer.s: src/ell_TcpServer.cc.s
+
+.PHONY : src/ell_TcpServer.s
+
+# target to generate assembly for a file
+src/ell_TcpServer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_TcpServer.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_TcpServer.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_TcpServer.cc.s
+.PHONY : src/ell_TcpServer.cc.s
+
+src/ell_Works.o: src/ell_Works.cc.o
+
+.PHONY : src/ell_Works.o
+
+# target to build an object file
+src/ell_Works.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Works.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Works.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Works.cc.o
+.PHONY : src/ell_Works.cc.o
+
+src/ell_Works.i: src/ell_Works.cc.i
+
+.PHONY : src/ell_Works.i
+
+# target to preprocess a source file
+src/ell_Works.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Works.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Works.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Works.cc.i
+.PHONY : src/ell_Works.cc.i
+
+src/ell_Works.s: src/ell_Works.cc.s
+
+.PHONY : src/ell_Works.s
+
+# target to generate assembly for a file
+src/ell_Works.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_Works.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_Works.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_Works.cc.s
+.PHONY : src/ell_Works.cc.s
 
 src/ell_inputBuffer.o: src/ell_inputBuffer.cc.o
 
@@ -552,38 +684,38 @@ src/ell_outputBuffer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s
 .PHONY : src/ell_outputBuffer.cc.s
 
-src/ell_socketOps.o: src/ell_socketOps.cc.o
+src/ell_shell.o: src/ell_shell.cc.o
 
-.PHONY : src/ell_socketOps.o
+.PHONY : src/ell_shell.o
 
 # target to build an object file
-src/ell_socketOps.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.o
-.PHONY : src/ell_socketOps.cc.o
+src/ell_shell.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_shell.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_shell.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_shell.cc.o
+.PHONY : src/ell_shell.cc.o
 
-src/ell_socketOps.i: src/ell_socketOps.cc.i
+src/ell_shell.i: src/ell_shell.cc.i
 
-.PHONY : src/ell_socketOps.i
+.PHONY : src/ell_shell.i
 
 # target to preprocess a source file
-src/ell_socketOps.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.i
-.PHONY : src/ell_socketOps.cc.i
+src/ell_shell.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_shell.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_shell.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_shell.cc.i
+.PHONY : src/ell_shell.cc.i
 
-src/ell_socketOps.s: src/ell_socketOps.cc.s
+src/ell_shell.s: src/ell_shell.cc.s
 
-.PHONY : src/ell_socketOps.s
+.PHONY : src/ell_shell.s
 
 # target to generate assembly for a file
-src/ell_socketOps.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.s
-.PHONY : src/ell_socketOps.cc.s
+src/ell_shell.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_shell.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_shell.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_shell.cc.s
+.PHONY : src/ell_shell.cc.s
 
 test/ts_test.o: test/ts_test.cpp.o
 
@@ -650,18 +782,30 @@ help:
 	@echo "... src/ell_Socket.o"
 	@echo "... src/ell_Socket.i"
 	@echo "... src/ell_Socket.s"
+	@echo "... src/ell_TcpAcceptor.o"
+	@echo "... src/ell_TcpAcceptor.i"
+	@echo "... src/ell_TcpAcceptor.s"
+	@echo "... src/ell_TcpClient.o"
+	@echo "... src/ell_TcpClient.i"
+	@echo "... src/ell_TcpClient.s"
 	@echo "... src/ell_TcpConnector.o"
 	@echo "... src/ell_TcpConnector.i"
 	@echo "... src/ell_TcpConnector.s"
+	@echo "... src/ell_TcpServer.o"
+	@echo "... src/ell_TcpServer.i"
+	@echo "... src/ell_TcpServer.s"
+	@echo "... src/ell_Works.o"
+	@echo "... src/ell_Works.i"
+	@echo "... src/ell_Works.s"
 	@echo "... src/ell_inputBuffer.o"
 	@echo "... src/ell_inputBuffer.i"
 	@echo "... src/ell_inputBuffer.s"
 	@echo "... src/ell_outputBuffer.o"
 	@echo "... src/ell_outputBuffer.i"
 	@echo "... src/ell_outputBuffer.s"
-	@echo "... src/ell_socketOps.o"
-	@echo "... src/ell_socketOps.i"
-	@echo "... src/ell_socketOps.s"
+	@echo "... src/ell_shell.o"
+	@echo "... src/ell_shell.i"
+	@echo "... src/ell_shell.s"
 	@echo "... test/ts_test.o"
 	@echo "... test/ts_test.i"
 	@echo "... test/ts_test.s"

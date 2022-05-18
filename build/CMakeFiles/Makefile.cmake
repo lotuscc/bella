@@ -11,6 +11,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.18.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.18.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.18.4/CMakeSystem.cmake"
+  "../client/CMakeLists.txt"
+  "../server/CMakeLists.txt"
+  "../src/CMakeLists.txt"
   "/usr/share/cmake-3.18/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -49,11 +52,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "client/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test.out.dir/DependInfo.cmake"
-  "CMakeFiles/client.out.dir/DependInfo.cmake"
-  "CMakeFiles/server.out.dir/DependInfo.cmake"
+  "client/CMakeFiles/client.dir/DependInfo.cmake"
+  "server/CMakeFiles/server.dir/DependInfo.cmake"
+  "src/CMakeFiles/ell.dir/DependInfo.cmake"
   )

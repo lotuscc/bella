@@ -1,5 +1,11 @@
-/home/lotuscc/github_Project/bella/build/CMakeFiles/edit_cache.dir
-/home/lotuscc/github_Project/bella/build/CMakeFiles/test.out.dir
-/home/lotuscc/github_Project/bella/build/CMakeFiles/client.out.dir
 /home/lotuscc/github_Project/bella/build/CMakeFiles/rebuild_cache.dir
-/home/lotuscc/github_Project/bella/build/CMakeFiles/server.out.dir
+/home/lotuscc/github_Project/bella/build/CMakeFiles/edit_cache.dir
+/home/lotuscc/github_Project/bella/build/client/CMakeFiles/rebuild_cache.dir
+/home/lotuscc/github_Project/bella/build/client/CMakeFiles/edit_cache.dir
+/home/lotuscc/github_Project/bella/build/client/CMakeFiles/client.dir
+/home/lotuscc/github_Project/bella/build/server/CMakeFiles/rebuild_cache.dir
+/home/lotuscc/github_Project/bella/build/server/CMakeFiles/edit_cache.dir
+/home/lotuscc/github_Project/bella/build/server/CMakeFiles/server.dir
+/home/lotuscc/github_Project/bella/build/src/CMakeFiles/rebuild_cache.dir
+/home/lotuscc/github_Project/bella/build/src/CMakeFiles/edit_cache.dir
+/home/lotuscc/github_Project/bella/build/src/CMakeFiles/ell.dir

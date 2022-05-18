@@ -1,8 +1,0 @@
-syntax = "proto3";
-package ell;
-
-message ell_message {
-  int32 magic  = 1;
-  int32 type = 2;
-  string content = 3;
-}

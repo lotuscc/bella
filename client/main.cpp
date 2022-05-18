@@ -3,13 +3,8 @@
 #include <iostream>
 #include <memory>
 
-// #include "ell_Channel.h"
-// #include "ell_EPoller.hpp"
-// #include "ell_EventLoop.hpp"
 #include "ell_Ipv4Addr.h"
-// #include "ell_Socket.hpp"
-#include "ell_TcpClient.hpp"
-// #include "ell_TcpServer.hpp"
+#include "ell_TcpClient.h"
 
 int main() {
     ell_Ipv4Addr server_addr;

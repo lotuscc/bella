@@ -11,43 +11,52 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "-Wall --std=c++20 -g")
 
 
-find_package(Protobuf REQUIRED)
-include_directories(${Protobuf_INCLUDE_DIRS})
+
+add_subdirectory(client)
+add_subdirectory(server)
+add_subdirectory(src)
+
+# find_package(Protobuf REQUIRED)
+# include_directories(${Protobuf_INCLUDE_DIRS})
 
 
-# 头文件查找目录
-include_directories(
-    ./src
-    ./src/ts
-    ./protobuf
-)
+# # 头文件查找目录
+# include_directories(
+#     ./src
+#     ./src/ts
+#     ./src/kernel
+#     ./src/net
+#     ./protobuf
+# )
 
 
-aux_source_directory(src DIR_LIBS_SRCS)
-aux_source_directory(src/ts DIR_LIBS_SRCS)
-aux_source_directory(protobuf DIR_LIBS_SRCS)
+# aux_source_directory(src DIR_LIBS_SRCS)
+# aux_source_directory(src/ts DIR_LIBS_SRCS)
+# aux_source_directory(src/kernel DIR_LIBS_SRCS)
+# aux_source_directory(src/net DIR_LIBS_SRCS)
+# aux_source_directory(protobuf DIR_LIBS_SRCS)
 
 
 
-# 把src目录下所有源文件写入变量DIR_SRCS
-aux_source_directory(server DIR_SERVER_SRCS)
-# 以DIR_SRCS为源文件生成目标文件a.out
-add_executable(server.out ${DIR_SERVER_SRCS} ${DIR_LIBS_SRCS})
+# # 把src目录下所有源文件写入变量DIR_SRCS
+# aux_source_directory(server DIR_SERVER_SRCS)
+# # 以DIR_SRCS为源文件生成目标文件a.out
+# add_executable(server.out ${DIR_SERVER_SRCS} ${DIR_LIBS_SRCS})
 
 
-aux_source_directory(client DIR_CLIENT_SRCS)
-add_executable(client.out ${DIR_CLIENT_SRCS} ${DIR_LIBS_SRCS})
+# aux_source_directory(client DIR_CLIENT_SRCS)
+# add_executable(client.out ${DIR_CLIENT_SRCS} ${DIR_LIBS_SRCS})
 
 
-aux_source_directory(test DIR_TEST_SRCS)
-add_executable(test.out ${DIR_TEST_SRCS}  ${DIR_LIBS_SRCS})
+# aux_source_directory(test DIR_TEST_SRCS)
+# add_executable(test.out ${DIR_TEST_SRCS}  ${DIR_LIBS_SRCS})
 
 
-find_package(Threads)
-target_link_libraries(client.out ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(server.out ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(test.out ${CMAKE_THREAD_LIBS_INIT})
+# find_package(Threads)
+# target_link_libraries(client.out ${CMAKE_THREAD_LIBS_INIT})
+# target_link_libraries(server.out ${CMAKE_THREAD_LIBS_INIT})
+# target_link_libraries(test.out ${CMAKE_THREAD_LIBS_INIT})
 
-target_link_libraries(client.out ${PROTOBUF_LIBRARIES})
-target_link_libraries(server.out ${PROTOBUF_LIBRARIES})
-target_link_libraries(test.out  ${PROTOBUF_LIBRARIES})
+# target_link_libraries(client.out ${PROTOBUF_LIBRARIES})
+# target_link_libraries(server.out ${PROTOBUF_LIBRARIES})
+# target_link_libraries(test.out  ${PROTOBUF_LIBRARIES})

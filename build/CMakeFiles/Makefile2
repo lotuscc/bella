@@ -72,104 +72,160 @@ CMAKE_BINARY_DIR = /home/lotuscc/github_Project/bella/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test.out.dir/all
-all: CMakeFiles/client.out.dir/all
-all: CMakeFiles/server.out.dir/all
+all: client/all
+all: server/all
+all: src/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: client/preinstall
+preinstall: server/preinstall
+preinstall: src/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test.out.dir/clean
-clean: CMakeFiles/client.out.dir/clean
-clean: CMakeFiles/server.out.dir/clean
+clean: client/clean
+clean: server/clean
+clean: src/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test.out.dir
+# Directory level rules for directory client
 
-# All Build rule for target.
-CMakeFiles/test.out.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51 "Built target test.out"
-.PHONY : CMakeFiles/test.out.dir/all
+# Recursive "all" directory target.
+client/all: client/CMakeFiles/client.dir/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/test.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.out.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 0
-.PHONY : CMakeFiles/test.out.dir/rule
+.PHONY : client/all
 
-# Convenience name for target.
-test.out: CMakeFiles/test.out.dir/rule
+# Recursive "preinstall" directory target.
+client/preinstall:
 
-.PHONY : test.out
+.PHONY : client/preinstall
 
-# clean rule for target.
-CMakeFiles/test.out.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/clean
-.PHONY : CMakeFiles/test.out.dir/clean
+# Recursive "clean" directory target.
+client/clean: client/CMakeFiles/client.dir/clean
+
+.PHONY : client/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/client.out.dir
+# Directory level rules for directory server
 
-# All Build rule for target.
-CMakeFiles/client.out.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target client.out"
-.PHONY : CMakeFiles/client.out.dir/all
+# Recursive "all" directory target.
+server/all: server/CMakeFiles/server.dir/all
 
-# Build rule for subdir invocation for target.
-CMakeFiles/client.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client.out.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 0
-.PHONY : CMakeFiles/client.out.dir/rule
+.PHONY : server/all
 
-# Convenience name for target.
-client.out: CMakeFiles/client.out.dir/rule
+# Recursive "preinstall" directory target.
+server/preinstall:
 
-.PHONY : client.out
+.PHONY : server/preinstall
 
-# clean rule for target.
-CMakeFiles/client.out.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/clean
-.PHONY : CMakeFiles/client.out.dir/clean
+# Recursive "clean" directory target.
+server/clean: server/CMakeFiles/server.dir/clean
+
+.PHONY : server/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/server.out.dir
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/ell.dir/all
+
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/ell.dir/clean
+
+.PHONY : src/clean
+
+#=============================================================================
+# Target rules for target client/CMakeFiles/client.dir
 
 # All Build rule for target.
-CMakeFiles/server.out.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34 "Built target server.out"
-.PHONY : CMakeFiles/server.out.dir/all
+client/CMakeFiles/client.dir/all: src/CMakeFiles/ell.dir/all
+	$(MAKE) $(MAKESILENT) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/depend
+	$(MAKE) $(MAKESILENT) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=1,2 "Built target client"
+.PHONY : client/CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/server.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 17
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/server.out.dir/all
+client/CMakeFiles/client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 18
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client/CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 0
-.PHONY : CMakeFiles/server.out.dir/rule
+.PHONY : client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-server.out: CMakeFiles/server.out.dir/rule
+client: client/CMakeFiles/client.dir/rule
 
-.PHONY : server.out
+.PHONY : client
 
 # clean rule for target.
-CMakeFiles/server.out.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/clean
-.PHONY : CMakeFiles/server.out.dir/clean
+client/CMakeFiles/client.dir/clean:
+	$(MAKE) $(MAKESILENT) -f client/CMakeFiles/client.dir/build.make client/CMakeFiles/client.dir/clean
+.PHONY : client/CMakeFiles/client.dir/clean
+
+#=============================================================================
+# Target rules for target server/CMakeFiles/server.dir
+
+# All Build rule for target.
+server/CMakeFiles/server.dir/all: src/CMakeFiles/ell.dir/all
+	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/depend
+	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=19,20 "Built target server"
+.PHONY : server/CMakeFiles/server.dir/all
+
+# Build rule for subdir invocation for target.
+server/CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 18
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server/CMakeFiles/server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 0
+.PHONY : server/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: server/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# clean rule for target.
+server/CMakeFiles/server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f server/CMakeFiles/server.dir/build.make server/CMakeFiles/server.dir/clean
+.PHONY : server/CMakeFiles/server.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/ell.dir
+
+# All Build rule for target.
+src/CMakeFiles/ell.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ell.dir/build.make src/CMakeFiles/ell.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ell.dir/build.make src/CMakeFiles/ell.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target ell"
+.PHONY : src/CMakeFiles/ell.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/ell.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ell.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lotuscc/github_Project/bella/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/ell.dir/rule
+
+# Convenience name for target.
+ell: src/CMakeFiles/ell.dir/rule
+
+.PHONY : ell
+
+# clean rule for target.
+src/CMakeFiles/ell.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ell.dir/build.make src/CMakeFiles/ell.dir/clean
+.PHONY : src/CMakeFiles/ell.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

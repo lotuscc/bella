@@ -3,32 +3,47 @@
 #include <iostream>
 #include <memory>
 
-// #include "ell_Channel.h"
-// #include "ell_EPoller.h"
-// #include "ell_EventLoop.hpp"
 #include "ell_Ipv4Addr.h"
-#include "ell_Socket.hpp"
-#include "ell_TcpClient.hpp"
-#include "ell_TcpServer.hpp"
+#include "ell_Socket.h"
+#include "ell_TcpClient.h"
+#include "ell_TcpServer.h"
 
-void echo(ell::ell_message *message, ell::ell_message *ret) {
-    // ret.set
-    ret->set_magic(message->magic());
-    ret->set_type(0x08);
+using MessageCall = ell_TcpConnector::handerMessageCall;
+
+void echo(ell::ell_message *message, ell::ell_message *ret, void *next) {
     ret->set_content(message->content());
+}
+
+
+void sayhello3(ell::ell_message *m, ell::ell_message *ret, void *next) {
+
+    ret->set_content("hello3");
+
+    *(MessageCall *)next = echo;
+}
+
+void sayhello2(ell::ell_message *m, ell::ell_message *ret, void *next) {
+
+    ret->set_content("hello2");
+
+    *(MessageCall *)next = sayhello3;
+}
+
+
+void sayhello(ell::ell_message *m, ell::ell_message *ret, void *next) {
+
+    ret->set_content("hello1");
+
+    *(MessageCall *)next = sayhello;
 }
 
 int main() {
 
     ell_Ipv4Addr local_addr;
 
-    EventCallBack call;
     auto server = new ell_TcpServer(local_addr);
 
-    // server->bind(local_addr);
-    // server->listen();
-
-    server->setdefaultMessage(echo);
+    server->setdefaultMessage(sayhello);
 
     server->loop();
 

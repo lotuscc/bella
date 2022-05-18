@@ -1,0 +1,6 @@
+syntax = "proto3";
+package ell;
+// protoc -I=./ --cpp_out=./ ell_message.proto 
+message ell_message {
+  string content = 3;
+}

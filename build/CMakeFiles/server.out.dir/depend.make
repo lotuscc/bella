@@ -19,7 +19,7 @@ CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_inputBuffer.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_outputBuffer.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_shell.hpp
-CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ell_socketOps.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_conn_pool.h
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_pool.hpp
 CMakeFiles/server.out.dir/server/main.cpp.o: ../src/ts/ell_ts_queue.hpp
@@ -56,13 +56,13 @@ CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_TcpConnector.h
 CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_inputBuffer.h
 CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_outputBuffer.h
-CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_socketOps.h
 
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Ipv4Addr.h
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.cc
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.h
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_log.hpp
-CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_socketOps.h
 
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../protobuf/ell_message.pb.h
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_Channel.h
@@ -74,17 +74,19 @@ CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_TcpConnector.h
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_inputBuffer.h
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_outputBuffer.h
-CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_socketOps.h
 
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../protobuf/ell_message.pb.h
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_inputBuffer.cc
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_inputBuffer.h
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_log.hpp
-CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_socketOps.h
 
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../protobuf/ell_message.pb.h
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_log.hpp
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_outputBuffer.cc
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_outputBuffer.h
-CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_socketOps.hpp
+CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_socketOps.h
+
+CMakeFiles/server.out.dir/src/ell_socketOps.cc.o: ../src/ell_socketOps.cc
 

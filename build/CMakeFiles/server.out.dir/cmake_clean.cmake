@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o"
   "CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o"
   "CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o"
+  "CMakeFiles/server.out.dir/src/ell_socketOps.cc.o"
   "server.out"
   "server.out.pdb"
 )

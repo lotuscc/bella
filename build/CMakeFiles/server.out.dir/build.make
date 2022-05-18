@@ -79,145 +79,158 @@ include CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/server/main.cpp.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/server/main.cpp.o: ../server/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.out.dir/server/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/server/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp
 
 CMakeFiles/server.out.dir/server/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/server/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/server/main.cpp > CMakeFiles/server.out.dir/server/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/server/main.cpp > CMakeFiles/server.out.dir/server/main.cpp.i
 
 CMakeFiles/server.out.dir/server/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/server/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/server/main.cpp -o CMakeFiles/server.out.dir/server/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/server/main.cpp -o CMakeFiles/server.out.dir/server/main.cpp.s
 
 CMakeFiles/server.out.dir/src/ell_Channel.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_Channel.cc.o: ../src/ell_Channel.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.out.dir/src/ell_Channel.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Channel.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Channel.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Channel.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Channel.cc
 
 CMakeFiles/server.out.dir/src/ell_Channel.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_Channel.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Channel.cc > CMakeFiles/server.out.dir/src/ell_Channel.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Channel.cc > CMakeFiles/server.out.dir/src/ell_Channel.cc.i
 
 CMakeFiles/server.out.dir/src/ell_Channel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_Channel.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Channel.cc -o CMakeFiles/server.out.dir/src/ell_Channel.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Channel.cc -o CMakeFiles/server.out.dir/src/ell_Channel.cc.s
 
 CMakeFiles/server.out.dir/src/ell_EPoller.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_EPoller.cc.o: ../src/ell_EPoller.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.out.dir/src/ell_EPoller.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_EPoller.cc.o -c /home/lotuscc/github_Project/bella/src/ell_EPoller.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_EPoller.cc.o -c /home/lotuscc/github_Project/bella/src/ell_EPoller.cc
 
 CMakeFiles/server.out.dir/src/ell_EPoller.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_EPoller.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_EPoller.cc > CMakeFiles/server.out.dir/src/ell_EPoller.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_EPoller.cc > CMakeFiles/server.out.dir/src/ell_EPoller.cc.i
 
 CMakeFiles/server.out.dir/src/ell_EPoller.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_EPoller.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_EPoller.cc -o CMakeFiles/server.out.dir/src/ell_EPoller.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_EPoller.cc -o CMakeFiles/server.out.dir/src/ell_EPoller.cc.s
 
 CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o: ../src/ell_EventLoop.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o -c /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_EventLoop.cc.o -c /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc
 
 CMakeFiles/server.out.dir/src/ell_EventLoop.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_EventLoop.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc > CMakeFiles/server.out.dir/src/ell_EventLoop.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc > CMakeFiles/server.out.dir/src/ell_EventLoop.cc.i
 
 CMakeFiles/server.out.dir/src/ell_EventLoop.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_EventLoop.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc -o CMakeFiles/server.out.dir/src/ell_EventLoop.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_EventLoop.cc -o CMakeFiles/server.out.dir/src/ell_EventLoop.cc.s
 
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o: ../src/ell_Ipv4Addr.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc
 
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc > CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc > CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.i
 
 CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc -o CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Ipv4Addr.cc -o CMakeFiles/server.out.dir/src/ell_Ipv4Addr.cc.s
 
 CMakeFiles/server.out.dir/src/ell_Serves.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_Serves.cc.o: ../src/ell_Serves.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.out.dir/src/ell_Serves.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Serves.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Serves.cc
 
 CMakeFiles/server.out.dir/src/ell_Serves.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_Serves.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Serves.cc > CMakeFiles/server.out.dir/src/ell_Serves.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Serves.cc > CMakeFiles/server.out.dir/src/ell_Serves.cc.i
 
 CMakeFiles/server.out.dir/src/ell_Serves.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_Serves.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Serves.cc -o CMakeFiles/server.out.dir/src/ell_Serves.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Serves.cc -o CMakeFiles/server.out.dir/src/ell_Serves.cc.s
 
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_Socket.cc.o: ../src/ell_Socket.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.out.dir/src/ell_Socket.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Socket.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/ell_Socket.cc
 
 CMakeFiles/server.out.dir/src/ell_Socket.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_Socket.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Socket.cc > CMakeFiles/server.out.dir/src/ell_Socket.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_Socket.cc > CMakeFiles/server.out.dir/src/ell_Socket.cc.i
 
 CMakeFiles/server.out.dir/src/ell_Socket.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_Socket.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Socket.cc -o CMakeFiles/server.out.dir/src/ell_Socket.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_Socket.cc -o CMakeFiles/server.out.dir/src/ell_Socket.cc.s
 
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o: ../src/ell_TcpConnector.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc
 
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc > CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc > CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.i
 
 CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc -o CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_TcpConnector.cc -o CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.s
 
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o: ../src/ell_inputBuffer.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc
 
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc > CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc > CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.i
 
 CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc -o CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_inputBuffer.cc -o CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.s
 
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o: ../src/ell_outputBuffer.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc
 
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc > CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc > CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.i
 
 CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc -o CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_outputBuffer.cc -o CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s
+
+CMakeFiles/server.out.dir/src/ell_socketOps.cc.o: CMakeFiles/server.out.dir/flags.make
+CMakeFiles/server.out.dir/src/ell_socketOps.cc.o: ../src/ell_socketOps.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/server.out.dir/src/ell_socketOps.cc.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/src/ell_socketOps.cc.o -c /home/lotuscc/github_Project/bella/src/ell_socketOps.cc
+
+CMakeFiles/server.out.dir/src/ell_socketOps.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/src/ell_socketOps.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/src/ell_socketOps.cc > CMakeFiles/server.out.dir/src/ell_socketOps.cc.i
+
+CMakeFiles/server.out.dir/src/ell_socketOps.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/src/ell_socketOps.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/src/ell_socketOps.cc -o CMakeFiles/server.out.dir/src/ell_socketOps.cc.s
 
 CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o: CMakeFiles/server.out.dir/flags.make
 CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o: ../protobuf/ell_message.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc
 
 CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc > CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc > CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.i
 
 CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotuscc/github_Project/bella/protobuf/ell_message.pb.cc -o CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.s
 
 # Object files for target server.out
 server_out_OBJECTS = \
@@ -231,6 +244,7 @@ server_out_OBJECTS = \
 "CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o" \
 "CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o" \
 "CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o" \
+"CMakeFiles/server.out.dir/src/ell_socketOps.cc.o" \
 "CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o"
 
 # External object files for target server.out
@@ -246,12 +260,13 @@ server.out: CMakeFiles/server.out.dir/src/ell_Socket.cc.o
 server.out: CMakeFiles/server.out.dir/src/ell_TcpConnector.cc.o
 server.out: CMakeFiles/server.out.dir/src/ell_inputBuffer.cc.o
 server.out: CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.o
+server.out: CMakeFiles/server.out.dir/src/ell_socketOps.cc.o
 server.out: CMakeFiles/server.out.dir/protobuf/ell_message.pb.cc.o
 server.out: CMakeFiles/server.out.dir/build.make
 server.out: /usr/local/lib/libprotobuf.so
 server.out: /usr/local/lib/libprotobuf.so
 server.out: CMakeFiles/server.out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable server.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotuscc/github_Project/bella/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable server.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

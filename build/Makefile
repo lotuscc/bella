@@ -552,6 +552,39 @@ src/ell_outputBuffer.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_outputBuffer.cc.s
 .PHONY : src/ell_outputBuffer.cc.s
 
+src/ell_socketOps.o: src/ell_socketOps.cc.o
+
+.PHONY : src/ell_socketOps.o
+
+# target to build an object file
+src/ell_socketOps.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.o
+.PHONY : src/ell_socketOps.cc.o
+
+src/ell_socketOps.i: src/ell_socketOps.cc.i
+
+.PHONY : src/ell_socketOps.i
+
+# target to preprocess a source file
+src/ell_socketOps.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.i
+.PHONY : src/ell_socketOps.cc.i
+
+src/ell_socketOps.s: src/ell_socketOps.cc.s
+
+.PHONY : src/ell_socketOps.s
+
+# target to generate assembly for a file
+src/ell_socketOps.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.out.dir/build.make CMakeFiles/test.out.dir/src/ell_socketOps.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.out.dir/build.make CMakeFiles/client.out.dir/src/ell_socketOps.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.out.dir/build.make CMakeFiles/server.out.dir/src/ell_socketOps.cc.s
+.PHONY : src/ell_socketOps.cc.s
+
 test/ts_test.o: test/ts_test.cpp.o
 
 .PHONY : test/ts_test.o
@@ -626,6 +659,9 @@ help:
 	@echo "... src/ell_outputBuffer.o"
 	@echo "... src/ell_outputBuffer.i"
 	@echo "... src/ell_outputBuffer.s"
+	@echo "... src/ell_socketOps.o"
+	@echo "... src/ell_socketOps.i"
+	@echo "... src/ell_socketOps.s"
 	@echo "... test/ts_test.o"
 	@echo "... test/ts_test.i"
 	@echo "... test/ts_test.s"

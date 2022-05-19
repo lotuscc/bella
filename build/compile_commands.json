@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/lotuscc/github_Project/bella/build/client",
-  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -I\"/home/lotuscc/github_Project/bella/src/(\" -I\"/home/lotuscc/github_Project/bella/src/)\" -Wall --std=c++20 -g -g -o CMakeFiles/client.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -g -g -o CMakeFiles/client.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/client/main.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/server",
-  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -I\"/home/lotuscc/github_Project/bella/src/(\" -I\"/home/lotuscc/github_Project/bella/src/)\" -Wall --std=c++20 -g -g -o CMakeFiles/server.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -g -g -o CMakeFiles/server.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/server/main.cpp"
 },
 {

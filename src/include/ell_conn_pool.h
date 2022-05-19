@@ -11,9 +11,6 @@
 #include <thread>
 #include <type_traits>
 
-#include "ell_ts_queue.hpp"
-#include "function_wrapper.hpp"
-
 #include "ell_EventLoop.h"
 
 #include <assert.h>

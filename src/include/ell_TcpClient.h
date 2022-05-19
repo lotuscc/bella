@@ -11,8 +11,6 @@
 #include "ell_log.h"
 #include "ell_message.pb.h"
 #include "ell_outputBuffer.h"
-#include "ell_ts_pool.hpp"
-#include "ell_ts_queue.hpp"
 
 #include "ell_shell.h"
 
@@ -33,7 +31,7 @@ private:
 
     ell_Shell *shell_;
 
-    ts_queue<ell::ell_message> message_queue_;
+    // ts_queue<ell::ell_message> message_queue_;
 
     // ell_ts_pool ts_pool_;
 

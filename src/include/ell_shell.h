@@ -13,7 +13,6 @@
 #include "ell_log.h"
 #include "ell_message.pb.h"
 #include "ell_outputBuffer.h"
-#include "ell_ts_pool.hpp"
 
 #include "ell_EventLoop.h"
 

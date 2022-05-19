@@ -5,10 +5,7 @@ aux_source_directory(protobuf DIR_LIBS_SRCS)
 aux_source_directory(ts DIR_LIBS_SRCS)
 
 include_directories(
-    kernel
-    protobuf
-    net
-    ts
+    ./include
 )
 
 add_library(ell SHARED
@@ -26,9 +23,9 @@ target_link_libraries(ell ${CMAKE_THREAD_LIBS_INIT})
 
 
 # target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
-target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/protobuf)
-target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/kernel)
-target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/ts)
-target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/net)
+target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include())
+# target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/kernel)
+# target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/ts)
+# target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/net)
 
 

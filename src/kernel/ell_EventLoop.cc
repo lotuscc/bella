@@ -11,11 +11,6 @@
 #include "ell_Channel.h"
 #include "ell_EPoller.h"
 
-// class ell_Channel;
-// class ell_EPoller;
-
-// using ChannelList = ell_Channel::ChannelList;
-
 #include "ell_EventLoop.h"
 
 void ell_EventLoop::loop() {
@@ -24,13 +19,6 @@ void ell_EventLoop::loop() {
 
         // 阻塞
         poller_->poll(-1, &activeChannels_);
-
-        // 
-        // if (!workqueue.empty()) {
-
-        // } else {
-        //     poller_->poll(-1, &activeChannels_);
-        // }
 
         for (ChannelList::iterator it = activeChannels_.begin();
              it != activeChannels_.end(); ++it) {
@@ -41,15 +29,15 @@ void ell_EventLoop::loop() {
     }
 }
 
-void ell_EventLoop::append_channel(ell_Channel *channel) {
+void ell_EventLoop::appendChannel(ell_Channel *channel) {
     poller_->append_listenChannel(channel);
 }
 
-void ell_EventLoop::remove_Channel(ell_Channel *channel) {
+void ell_EventLoop::removeChannel(ell_Channel *channel) {
     poller_->remove_listenChannel(channel);
 }
 
-void ell_EventLoop::update_Channel(ell_Channel *channel) {
+void ell_EventLoop::updateChannel(ell_Channel *channel) {
     poller_->updateChannel(channel);
 }
 

@@ -8,6 +8,8 @@ class ell_Ipv4Addr {
 private:
     struct sockaddr_in addr_;
     socklen_t len_;
+public:
+    void remake(const char *ip = "127.0.0.1", int port = 9999);
 
 public:
     ell_Ipv4Addr(const char *ip = "127.0.0.1", int port = 9999);

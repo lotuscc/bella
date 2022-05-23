@@ -18,20 +18,20 @@ using MessageCall = ell_TcpConnector::handerMessageCall;
 
 class ell_TcpServer {
 private:
-    ell_EventLoop *loop_;
-    ell_TcpAcceptor *acceptor_;
     ell_Ipv4Addr localAddr_;
+    ell_conn_pool pool_;
+    ell_EventLoop loop_;
+    ell_TcpAcceptor acceptor_;
 
-    std::map<int, ell_TcpConnector *> Connectors_;
+    using TcpConnectorPtr = std::shared_ptr<ell_TcpConnector>;
+
+    std::map<int, TcpConnectorPtr> Connectors_;
 
     ell_Works works_;
-
     MessageCall messagecall_;
 
-    ell_conn_pool* pool_;
-
 public:
-    ell_TcpServer(ell_Ipv4Addr& localAddr);
+    ell_TcpServer(ell_Ipv4Addr &localAddr);
     ~ell_TcpServer();
 
     void loop();

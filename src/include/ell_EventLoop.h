@@ -26,9 +26,9 @@ public:
     ell_EventLoop &operator=(const ell_EventLoop &) = delete;
 
     void loop();
-    void append_channel(ell_Channel *channel);
-    void remove_Channel(ell_Channel *channel);
-    void update_Channel(ell_Channel *channel);
+    void appendChannel(ell_Channel *channel);
+    void removeChannel(ell_Channel *channel);
+    void updateChannel(ell_Channel *channel);
 
     void make();
 };

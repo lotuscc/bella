@@ -16,36 +16,31 @@
 
 #include "ell_TcpServer.h"
 
-ell_TcpServer::ell_TcpServer(ell_Ipv4Addr& localAddr) {
-    pool_ = new ell_conn_pool();    
-    loop_ = new ell_EventLoop();
-    acceptor_ = new ell_TcpAcceptor(loop_, localAddr);
+ell_TcpServer::ell_TcpServer(ell_Ipv4Addr &localAddr)
+    : localAddr_(localAddr), pool_(2), loop_(), acceptor_(&loop_, localAddr_) {
 
-    acceptor_->setConnectionCallback(std::bind(&ell_TcpServer::defaultConnection,
-                                               this, std::placeholders::_1,
-                                               std::placeholders::_2));
+    acceptor_.setConnectionCallback(std::bind(&ell_TcpServer::defaultConnection,
+                                              this, std::placeholders::_1,
+                                              std::placeholders::_2));
 }
 
 ell_TcpServer::~ell_TcpServer() {}
 
-void ell_TcpServer::loop() { loop_->loop(); }
-
+void ell_TcpServer::loop() {
+    // 开始监听是否有连接到来
+    loop_.loop();
+}
 
 void ell_TcpServer::defaultConnection(int fd, ell_Ipv4Addr *peerAddr) {
-    // new client
-    // auto client = new ell_TcpConnector(loop_, fd, localAddr_, *peerAddr);
-
-    auto client = new ell_TcpConnector(pool_->getLoop(0), fd, localAddr_, *peerAddr);
-
-
-    client->set_handerMessageCall(messagecall_);
-
-    // works_.append(client);
-
-    Connectors_[fd] = client;
     // 分配TCP连接
-    //
-    // loop_->append_channel(client->channel());
+
+    // auto client =
+    //     new ell_TcpConnector(pool_.getLoop(), fd, localAddr_, *peerAddr);
+    // client->set_handerMessageCall(messagecall_);
+
+    Connectors_[fd] = std::make_shared<ell_TcpConnector>(pool_.getLoop(), fd,
+                                                         localAddr_, *peerAddr);
+    Connectors_[fd]->set_handerMessageCall(messagecall_);
 }
 
 void ell_TcpServer::setdefaultMessage(MessageCall call) {

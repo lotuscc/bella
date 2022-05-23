@@ -20,14 +20,13 @@ class ell_conn_pool {
 
     std::atomic_bool done;
     std::vector<ell_EventLoop *> pool;
+    int nth = 0;
 
 public:
-    ell_conn_pool() : done(false) {
+    ell_conn_pool(int nthreads) : done(false) {
         // unsigned const thread_count = std::thread::hardware_concurrency();
-
-        unsigned const thread_count = 4;
         try {
-            for (unsigned i = 0; i < thread_count; ++i) {
+            for (int i = 0; i < nthreads; ++i) {
                 auto eventloop = new ell_EventLoop();
 
                 auto t = std::jthread(&ell_EventLoop::loop, eventloop);
@@ -40,12 +39,12 @@ public:
         }
     }
 
-    ell_EventLoop *getLoop(int i) {
-        if (i < 0 || i >= pool.size()) {
+    ell_EventLoop *getLoop() {
+        nth %= pool.size();
+        if (nth < 0 || nth >= (int)pool.size()) {
             return nullptr;
         }
-
-        return pool[i];
+        return pool[nth++];
     }
 
     ~ell_conn_pool() { done = true; }

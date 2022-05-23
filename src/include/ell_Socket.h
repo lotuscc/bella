@@ -14,7 +14,10 @@
 
 class ell_Socket {
 private:
-    const int sockfd_;
+    int sockfd_;
+
+public:
+    void remake(int fd);
 
 public:
     ell_Socket();

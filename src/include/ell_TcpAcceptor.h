@@ -12,13 +12,13 @@
 // 只负责接受连接,并通过ConnectionCallback，将fd以及peerAddr回调给TcpServer
 // 不负责Tcp连接的分配
 class ell_TcpAcceptor {
-private:
-    ell_Socket *acceptSocket_;
-    ell_Channel *acceptChannel_;
-    ell_EventLoop *loop_;
-
+public:
     using ConnectionCallback =
         std::function<void(int fd, ell_Ipv4Addr *peerAddr)>;
+
+private:
+    ell_Socket acceptSocket_;
+    ell_Channel acceptChannel_;
 
     ConnectionCallback connectionCallback_;
 
@@ -33,9 +33,6 @@ public:
     ell_TcpAcceptor &operator=(const ell_TcpAcceptor &) = delete;
 
     ell_Channel *listenChannel();
-
-    // test
-    int fd() { return acceptSocket_->fd(); }
 
     void setConnectionCallback(ConnectionCallback callback);
 };

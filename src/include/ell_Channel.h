@@ -32,9 +32,10 @@ private:
     static const int kWriteEvent = EPOLLOUT;
     static const int kCloseEvent = EPOLLRDHUP;
 
+    // 保持所属于loop指针
     ell_EventLoop *loop_;
 
-    const int fd_;
+    int fd_;
     int events_;
     int revents_;
 
@@ -48,6 +49,9 @@ private:
         std::bind(&ell_Channel::defaultCallBack, this, "write");
     EventCallBack readCallBack_ =
         std::bind(&ell_Channel::defaultCallBack, this, "read");
+
+public:
+    void remake(ell_EventLoop *loop, int fd);
 
 public:
     ~ell_Channel();

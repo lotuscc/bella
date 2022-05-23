@@ -37,52 +37,52 @@ void ell_Channel::enableReading() {
     events_ |= kReadEvent;
 
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 void ell_Channel::disableReading() {
     events_ &= ~kReadEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 
 void ell_Channel::enableWriting() {
     events_ |= kWriteEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 void ell_Channel::disableWriting() {
     events_ &= ~kWriteEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 
 void ell_Channel::enableClosing() {
     events_ |= kCloseEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 void ell_Channel::disableClosing() {
     events_ &= ~kCloseEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 
 void ell_Channel::disableAll() {
     events_ = kNoneEvent;
     if (loop_ != nullptr) {
-        loop_->update_Channel(this);
+        loop_->updateChannel(this);
     }
 }
 
 void ell_Channel::remove() {
     if (loop_ != nullptr) {
-        loop_->remove_Channel(this);
+        loop_->removeChannel(this);
     }
 }
 

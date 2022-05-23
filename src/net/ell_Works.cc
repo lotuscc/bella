@@ -16,7 +16,7 @@ ell_Works::ell_Works() {}
 ell_Works::~ell_Works() {}
 
 void ell_Works::append(ell_TcpConnector *conn) {
-    loop_->append_channel(conn->channel());
+    // loop_->appendChannel(conn->channel());
 
-    Connectors_[conn->channel()->fd()] = conn;
+    // Connectors_[conn->channel()->fd()] = conn;
 }

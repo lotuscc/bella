@@ -21,15 +21,14 @@ using EventCallBack = ell_Channel::EventCallBack;
 
 class ell_TcpClient {
 private:
-    ell_EventLoop *loop_;
-    ell_TcpConnector *connector_;
-    ell_Socket *socket_;
+    ell_EventLoop loop_;
+    // ell_TcpConnector *connector_;
+    ell_Socket socket_;
     ell_outputBuffer outbuffer_;
     ell_inputBuffer inbuffer_;
 
-    ell_Channel *channel_;
-
-    ell_Shell *shell_;
+    ell_Channel channel_;
+    ell_Shell shell_;
 
     // ts_queue<ell::ell_message> message_queue_;
 

@@ -20,7 +20,7 @@ class ell_TcpServer {
 private:
     ell_Ipv4Addr localAddr_;
     ell_conn_pool pool_;
-    ell_EventLoop loop_;
+    std::shared_ptr<ell_EventLoop> loop_;
     ell_TcpAcceptor acceptor_;
 
     using TcpConnectorPtr = std::shared_ptr<ell_TcpConnector>;

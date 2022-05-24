@@ -24,7 +24,7 @@ void ell_Shell::setShellMessageCallBack(ShellMessageCallBack callback) {
     ShellMessageCallBack_ = std::move(callback);
 }
 
-ell_Shell::ell_Shell(ell_EventLoop *loop) {
+ell_Shell::ell_Shell(std::shared_ptr<ell_EventLoop> loop) {
 
     channel_ = new ell_Channel(loop, STDIN_FILENO);
 

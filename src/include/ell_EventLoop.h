@@ -8,6 +8,7 @@
 #include <signal.h>
 #include <vector>
 
+#include "ell_ts_pool.h"
 
 class ell_Channel;
 class ell_EPoller;
@@ -18,9 +19,10 @@ class ell_EventLoop {
 
     ChannelList activeChannels_;
     std::unique_ptr<ell_EPoller> poller_;
+    std::shared_ptr<ell_ts_pool> pool_;
 
 public:
-    ell_EventLoop();
+    ell_EventLoop(std::shared_ptr<ell_ts_pool> pool);
     ~ell_EventLoop();
     ell_EventLoop(const ell_EventLoop &) = delete;
     ell_EventLoop &operator=(const ell_EventLoop &) = delete;

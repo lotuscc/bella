@@ -30,7 +30,7 @@ private:
     ShellMessageCallBack ShellMessageCallBack_;
 
 public:
-    ell_Shell(ell_EventLoop *loop);
+    ell_Shell(std::shared_ptr<ell_EventLoop> loop);
     ~ell_Shell();
 
     void setShellMessageCallBack(ShellMessageCallBack callback);

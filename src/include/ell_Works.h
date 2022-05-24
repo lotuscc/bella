@@ -12,9 +12,6 @@
 
 class ell_Works {
 private:
-    ell_EventLoop *loop_;
-    std::map<int, ell_TcpConnector *> Connectors_;
-
     // void handler func(ResponseWriter, *Request)
 public:
     ell_Works();
@@ -22,6 +19,4 @@ public:
 
     ell_Works(const ell_Works &) = delete;
     ell_Works &operator=(const ell_Works &) = delete;
-
-    void append(ell_TcpConnector *conn);
 };

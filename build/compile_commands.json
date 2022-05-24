@@ -61,11 +61,6 @@
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Works.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Works.cc",
-  "file": "/home/lotuscc/github_Project/bella/src/net/ell_Works.cc"
-},
-{
-  "directory": "/home/lotuscc/github_Project/bella/build/src",
   "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_inputBuffer.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_inputBuffer.cc"
 },
@@ -83,5 +78,15 @@
   "directory": "/home/lotuscc/github_Project/bella/build/src",
   "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/src/protobuf/ell_message.pb.cc",
   "file": "/home/lotuscc/github_Project/bella/src/protobuf/ell_message.pb.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build/src",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_Works.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_Works.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ts/ell_Works.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build/src",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_ts_pool.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_ts_pool.cc",
+  "file": "/home/lotuscc/github_Project/bella/src/ts/ell_ts_pool.cc"
 }
 ]

@@ -26,7 +26,8 @@ private:
     void handread();
 
 public:
-    ell_TcpAcceptor(ell_EventLoop *loop, ell_Ipv4Addr &localAddr);
+    ell_TcpAcceptor(std::shared_ptr<ell_EventLoop> loop,
+                    ell_Ipv4Addr &localAddr);
     ~ell_TcpAcceptor();
 
     ell_TcpAcceptor(const ell_TcpAcceptor &) = delete;

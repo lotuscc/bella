@@ -17,7 +17,9 @@
 #include "ell_TcpServer.h"
 
 ell_TcpServer::ell_TcpServer(ell_Ipv4Addr &localAddr)
-    : localAddr_(localAddr), pool_(2), loop_(), acceptor_(&loop_, localAddr_) {
+    : localAddr_(localAddr), pool_(2),
+      loop_(std::make_shared<ell_EventLoop>(nullptr)),
+      acceptor_(loop_, localAddr_) {
 
     acceptor_.setConnectionCallback(std::bind(&ell_TcpServer::defaultConnection,
                                               this, std::placeholders::_1,
@@ -28,7 +30,7 @@ ell_TcpServer::~ell_TcpServer() {}
 
 void ell_TcpServer::loop() {
     // 开始监听是否有连接到来
-    loop_.loop();
+    loop_->loop();
 }
 
 void ell_TcpServer::defaultConnection(int fd, ell_Ipv4Addr *peerAddr) {

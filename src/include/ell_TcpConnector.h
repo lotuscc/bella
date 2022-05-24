@@ -40,13 +40,13 @@ private:
     // WriteCompleteCallback writeCompleteCallback_;
     // HighWaterMarkCallback highWaterMarkCallback_;
 public:
-    void remake(ell_EventLoop *loop, int fd, ell_Ipv4Addr localAddr,
+    void remake(std::shared_ptr<ell_EventLoop> loop, int fd, ell_Ipv4Addr localAddr,
                 ell_Ipv4Addr peerAddr);
 
     void make_clean();
 
 public:
-    ell_TcpConnector(ell_EventLoop *loop, int fd, ell_Ipv4Addr localAddr,
+    ell_TcpConnector(std::shared_ptr<ell_EventLoop> loop, int fd, ell_Ipv4Addr localAddr,
                      ell_Ipv4Addr peerAddr);
     ~ell_TcpConnector();
 

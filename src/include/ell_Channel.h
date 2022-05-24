@@ -12,6 +12,8 @@
 
 #include "ell_log.h"
 
+#include <memory>
+
 // ell_Channel 不拥有 fd_ 的所有权
 // 相当与挂在 fd_ 上的一条观察通道，从某一个角度观察 fd_ 上的事件
 // 一个 fd_ 可以拥有多个 ell_Channel，例如，一个 ell_Channel
@@ -33,12 +35,12 @@ private:
     static const int kCloseEvent = EPOLLRDHUP;
 
     // 保持所属于loop指针
-    ell_EventLoop *loop_;
-
+    std::shared_ptr<ell_EventLoop> loop_;
     int fd_;
     int events_;
     int revents_;
-
+    mutable std::mutex mut_;
+    
     // void sayhello() { std::cout << "hello in Channel" << std::endl; }
 
     EventCallBack closeCallBack_ =
@@ -51,12 +53,12 @@ private:
         std::bind(&ell_Channel::defaultCallBack, this, "read");
 
 public:
-    void remake(ell_EventLoop *loop, int fd);
+    void remake(std::shared_ptr<ell_EventLoop> loop, int fd);
 
 public:
     ~ell_Channel();
-    ell_Channel(ell_EventLoop *loop, int fd);
-    ell_Channel &from(ell_EventLoop *loop, int fd);
+    ell_Channel(std::shared_ptr<ell_EventLoop> loop, int fd);
+    ell_Channel &from(std::shared_ptr<ell_EventLoop> loop, int fd);
 
     ell_Channel(const ell_Channel &) = delete;
     ell_Channel &operator=(const ell_Channel &) = delete;

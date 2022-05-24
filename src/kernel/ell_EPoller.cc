@@ -46,8 +46,7 @@ void ell_EPoller::fillActiveChannels(int numEvents,
         // new connection
         if (listenChannels_.count(newfd)) {
             listenChannels_[newfd]->set_revents(events_[i].events);
-            activeChannels->push_back(listenChannels_[newfd]);
-            continue;
+            activeChannels->push_back(listenChannels_[newfd]);            
         } else {
             // error
         }

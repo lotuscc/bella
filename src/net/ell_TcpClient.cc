@@ -5,6 +5,7 @@
 #include "ell_TcpConnector.h"
 #include "ell_log.h"
 #include <cstring>
+#include <memory>
 #include <unistd.h>
 
 #include "ell_inputBuffer.h"
@@ -20,7 +21,8 @@
 #include "ell_TcpClient.h"
 
 ell_TcpClient::ell_TcpClient()
-    : loop_(), socket_(), channel_(&loop_, socket_.fd()),shell_(&loop_) {
+    : loop_(std::make_shared<ell_EventLoop>(nullptr)), socket_(),
+      channel_(loop_, socket_.fd()), shell_(loop_) {
 
     channel_.set_readCallBack(std::bind(&ell_TcpClient::handread, this));
     channel_.set_closeCallBack(std::bind(&ell_TcpClient::handleClose, this));
@@ -30,8 +32,8 @@ ell_TcpClient::ell_TcpClient()
     channel_.enableReading();
     channel_.enableClosing();
 
-    shell_.setShellMessageCallBack(std::bind(
-        &ell_TcpClient::handleShellMessage, this, std::placeholders::_1));
+    shell_.setShellMessageCallBack(std::bind(&ell_TcpClient::handleShellMessage,
+                                             this, std::placeholders::_1));
 }
 
 ell_TcpClient::~ell_TcpClient() {}
@@ -43,7 +45,7 @@ void ell_TcpClient::disconnect() {}
 
 void ell_TcpClient::loop() {
     LOG("start  loop! \n");
-    loop_.loop();
+    loop_->loop();
 }
 
 void ell_TcpClient::sayhello() {
@@ -60,7 +62,7 @@ void ell_TcpClient::sayhello() {
         outbuffer_.writeMessage(message);
         // outbuffer_.send(socket_->fd());
         channel_.enableWriting();
-        loop_.updateChannel(&channel_);
+        loop_->updateChannel(&channel_);
     }
 }
 

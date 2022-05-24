@@ -22,11 +22,11 @@ using MessageCallback = ell_Channel::EventCallBack;
 using WriteCompleteCallback = ell_Channel::EventCallBack;
 using HighWaterMarkCallback = ell_Channel::EventCallBack;
 
-void ell_TcpConnector::remake(ell_EventLoop *loop, int fd,
+void ell_TcpConnector::remake(std::shared_ptr<ell_EventLoop> loop, int fd,
                               ell_Ipv4Addr localAddr, ell_Ipv4Addr peerAddr) {
     localAddr_ = localAddr;
     peerAddr_ = peerAddr;
-    
+
     socket_.remake(fd);
     channel_.remake(loop, fd);
 
@@ -42,7 +42,7 @@ void ell_TcpConnector::remake(ell_EventLoop *loop, int fd,
     channel_.enableClosing();
 }
 
-ell_TcpConnector::ell_TcpConnector(ell_EventLoop *loop, int fd,
+ell_TcpConnector::ell_TcpConnector(std::shared_ptr<ell_EventLoop> loop, int fd,
                                    ell_Ipv4Addr localAddr,
                                    ell_Ipv4Addr peerAddr)
     : localAddr_(localAddr), peerAddr_(peerAddr), socket_(fd),

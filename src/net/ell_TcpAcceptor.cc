@@ -11,7 +11,7 @@
 
 #include "ell_TcpAcceptor.h"
 
-ell_TcpAcceptor::ell_TcpAcceptor(ell_EventLoop *loop, ell_Ipv4Addr &localAddr)
+ell_TcpAcceptor::ell_TcpAcceptor(std::shared_ptr<ell_EventLoop> loop, ell_Ipv4Addr &localAddr)
     : acceptSocket_(), acceptChannel_(loop, acceptSocket_.fd()){
     // acceptSocket_ = new ell_Socket();
 

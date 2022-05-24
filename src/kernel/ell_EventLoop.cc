@@ -6,12 +6,13 @@
 #include <poll.h>
 #include <pthread.h>
 #include <signal.h>
+#include <utility>
 #include <vector>
 
 #include "ell_Channel.h"
 #include "ell_EPoller.h"
-
 #include "ell_EventLoop.h"
+#include "ell_log.h"
 
 void ell_EventLoop::loop() {
     while (true) {
@@ -20,11 +21,11 @@ void ell_EventLoop::loop() {
         // 阻塞
         poller_->poll(-1, &activeChannels_);
 
-        for (ChannelList::iterator it = activeChannels_.begin();
-             it != activeChannels_.end(); ++it) {
-            (*it)->handleEvent();
-            // 可以优化为异步执行
+        for (int i = 0; i < (int)activeChannels_.size(); ++i) {
 
+            LOG("ell_EventLoop loop");
+            // 同步执行
+            activeChannels_[i]->handleEvent();
         }
     }
 }
@@ -41,6 +42,8 @@ void ell_EventLoop::updateChannel(ell_Channel *channel) {
     poller_->updateChannel(channel);
 }
 
-ell_EventLoop::ell_EventLoop() { poller_ = std::make_unique<ell_EPoller>(); }
+ell_EventLoop::ell_EventLoop(std::shared_ptr<ell_ts_pool> pool) : pool_(pool) {
+    poller_ = std::make_unique<ell_EPoller>();
+}
 
 ell_EventLoop::~ell_EventLoop() {}

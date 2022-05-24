@@ -38,8 +38,13 @@ void ell_TcpServer::defaultConnection(int fd, ell_Ipv4Addr *peerAddr) {
     //     new ell_TcpConnector(pool_.getLoop(), fd, localAddr_, *peerAddr);
     // client->set_handerMessageCall(messagecall_);
 
-    Connectors_[fd] = std::make_shared<ell_TcpConnector>(pool_.getLoop(), fd,
-                                                         localAddr_, *peerAddr);
+    if (Connectors_.contains(fd)) {
+        Connectors_[fd]->remake(pool_.getLoop(), fd, localAddr_, *peerAddr);
+    } else {
+        Connectors_[fd] = std::make_shared<ell_TcpConnector>(
+            pool_.getLoop(), fd, localAddr_, *peerAddr);
+    }
+
     Connectors_[fd]->set_handerMessageCall(messagecall_);
 }
 

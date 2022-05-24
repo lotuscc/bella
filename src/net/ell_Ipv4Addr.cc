@@ -1,9 +1,18 @@
 #pragma once
 
+#include "ell_Ipv4Addr.h"
 #include <arpa/inet.h>
 #include <cstring>
 #include <netinet/in.h>
-#include "ell_Ipv4Addr.h"
+
+void ell_Ipv4Addr::remake(const char *ip, int port) {
+    bzero(&addr_, sizeof(addr_));
+    addr_.sin_family = AF_INET;
+    inet_pton(AF_INET, ip, &addr_.sin_addr);
+    addr_.sin_port = htons(port);
+
+    len_ = sizeof addr_;
+}
 
 ell_Ipv4Addr::ell_Ipv4Addr(const char *ip, int port) {
     bzero(&addr_, sizeof(addr_));

@@ -9,8 +9,15 @@
 
 #include "ell_outputBuffer.h"
 
+void ell_outputBuffer::remake() {
+    memset(input_data_, '\0', kBUFFERSIZE);
+    oWriteIdx_ = 0;
+    oReadIdx_ = 0;
+}
 
-ell_outputBuffer::ell_outputBuffer() { memset(input_data_, '\0', kBUFFERSIZE); }
+ell_outputBuffer::ell_outputBuffer() : oWriteIdx_(0), oReadIdx_(0) {
+    memset(input_data_, '\0', kBUFFERSIZE);
+}
 
 ell_outputBuffer::~ell_outputBuffer() {}
 

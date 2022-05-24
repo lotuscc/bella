@@ -40,6 +40,10 @@ private:
     // WriteCompleteCallback writeCompleteCallback_;
     // HighWaterMarkCallback highWaterMarkCallback_;
 public:
+    void remake(ell_EventLoop *loop, int fd, ell_Ipv4Addr localAddr,
+                ell_Ipv4Addr peerAddr);
+
+    void make_clean();
 
 public:
     ell_TcpConnector(ell_EventLoop *loop, int fd, ell_Ipv4Addr localAddr,
@@ -61,8 +65,4 @@ public:
     void set_handerMessageCall(handerMessageCall call);
 
     // ell_Channel *channel();
-
-    void make_clean();
-    void remake(ell_EventLoop *loop, int fd, ell_Ipv4Addr localAddr,
-                ell_Ipv4Addr peerAddr);
 };

@@ -22,6 +22,13 @@
 // 一个 fd_ 可以拥有多个 ell_Channel，例如，一个 ell_Channel
 // 负责写，一个ell_Channel 负责读，等等
 
+void ell_Channel::remake(ell_EventLoop *loop, int fd) {
+    loop_ = loop;
+    fd_ = fd;
+    events_ = 0;
+    revents_ = 0;
+}
+
 ell_Channel::ell_Channel(ell_EventLoop *loop, int fd)
     : loop_(loop), fd_(fd), events_(0), revents_(0) {}
 

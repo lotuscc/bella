@@ -17,6 +17,7 @@ class ell_inputBuffer {
     int iReadIdx_ = 0;
 
 public:
+    void remake();
     ell_inputBuffer();
     ~ell_inputBuffer();
 

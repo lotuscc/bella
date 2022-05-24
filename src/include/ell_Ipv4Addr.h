@@ -10,6 +10,7 @@ private:
     socklen_t len_;
 public:
     void remake(const char *ip = "127.0.0.1", int port = 9999);
+    void remake();
 
 public:
     ell_Ipv4Addr(const char *ip = "127.0.0.1", int port = 9999);

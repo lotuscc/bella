@@ -15,7 +15,11 @@ class ell_outputBuffer {
     int oWriteIdx_ = 0;
     int oReadIdx_ = 0;
 
+
+
 public:
+    void remake();
+
     ell_outputBuffer();
     ~ell_outputBuffer();
 

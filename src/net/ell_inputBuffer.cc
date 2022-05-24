@@ -10,7 +10,15 @@
 
 #include "ell_inputBuffer.h"
 
-ell_inputBuffer::ell_inputBuffer() { memset(output_data_, '\0', kBUFFERSIZE); }
+void ell_inputBuffer::remake() {
+    memset(output_data_, '\0', kBUFFERSIZE);
+    iWriteIdx_ = 0;
+    iReadIdx_ = 0;
+}
+
+ell_inputBuffer::ell_inputBuffer() : iWriteIdx_(0), iReadIdx_(0) {
+    memset(output_data_, '\0', kBUFFERSIZE);
+}
 
 ell_inputBuffer::~ell_inputBuffer() {}
 
@@ -63,6 +71,4 @@ bool ell_inputBuffer::tryReadMessage(ell::ell_message &message) {
     return true;
 }
 
-bool ell_inputBuffer::istry(void) {
-    return (iWriteIdx_ - iReadIdx_) >= 40;
-}
+bool ell_inputBuffer::istry(void) { return (iWriteIdx_ - iReadIdx_) >= 40; }

@@ -21,7 +21,7 @@
 #include "ell_TcpClient.h"
 
 ell_TcpClient::ell_TcpClient()
-    : loop_(std::make_shared<ell_EventLoop>(nullptr)), socket_(),
+    : loop_(std::make_shared<ell_EventLoop>()), socket_(),
       channel_(loop_, socket_.fd()), shell_(loop_) {
 
     channel_.set_readCallBack(std::bind(&ell_TcpClient::handread, this));

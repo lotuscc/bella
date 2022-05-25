@@ -22,7 +22,6 @@ using EventCallBack = ell_Channel::EventCallBack;
 class ell_TcpClient {
 private:
     std::shared_ptr<ell_EventLoop> loop_;
-    // ell_TcpConnector *connector_;
     ell_Socket socket_;
     ell_outputBuffer outbuffer_;
     ell_inputBuffer inbuffer_;

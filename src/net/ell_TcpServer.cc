@@ -15,11 +15,12 @@
 #include "ell_conn_pool.h"
 
 #include "ell_TcpServer.h"
+#include "ell_ts_pool.h"
 
 ell_TcpServer::ell_TcpServer(ell_Ipv4Addr &localAddr)
-    : localAddr_(localAddr), pool_(2),
-      loop_(std::make_shared<ell_EventLoop>(nullptr)),
-      acceptor_(loop_, localAddr_) {
+    : localAddr_(localAddr), pool_(2), loop_(std::make_shared<ell_EventLoop>()),
+      acceptor_(loop_, localAddr_),
+      executor_pool(std::make_shared<ell_ts_pool>(2)) {
 
     acceptor_.setConnectionCallback(std::bind(&ell_TcpServer::defaultConnection,
                                               this, std::placeholders::_1,
@@ -41,10 +42,11 @@ void ell_TcpServer::defaultConnection(int fd, ell_Ipv4Addr *peerAddr) {
     // client->set_handerMessageCall(messagecall_);
 
     if (Connectors_.contains(fd)) {
-        Connectors_[fd]->remake(pool_.getLoop(), fd, localAddr_, *peerAddr);
+        Connectors_[fd]->remake(executor_pool, pool_.getLoop(), fd, localAddr_,
+                                *peerAddr);
     } else {
         Connectors_[fd] = std::make_shared<ell_TcpConnector>(
-            pool_.getLoop(), fd, localAddr_, *peerAddr);
+            executor_pool, pool_.getLoop(), fd, localAddr_, *peerAddr);
     }
 
     Connectors_[fd]->set_handerMessageCall(messagecall_);

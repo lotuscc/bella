@@ -13,6 +13,7 @@
 #include <unordered_map>
 
 #include "ell_conn_pool.h"
+#include "ell_ts_pool.h"
 
 using MessageCall = ell_TcpConnector::handerMessageCall;
 
@@ -29,6 +30,8 @@ private:
 
     ell_Works works_;
     MessageCall messagecall_;
+
+    std::shared_ptr<ell_ts_pool> executor_pool;
 
 public:
     ell_TcpServer(ell_Ipv4Addr &localAddr);

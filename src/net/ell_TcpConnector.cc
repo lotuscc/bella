@@ -4,6 +4,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <utility>
 
 #include "ell_Channel.h"
 #include "ell_EventLoop.h"
@@ -22,10 +23,12 @@ using MessageCallback = ell_Channel::EventCallBack;
 using WriteCompleteCallback = ell_Channel::EventCallBack;
 using HighWaterMarkCallback = ell_Channel::EventCallBack;
 
-void ell_TcpConnector::remake(std::shared_ptr<ell_EventLoop> loop, int fd,
+void ell_TcpConnector::remake(std::shared_ptr<ell_ts_pool> executor_pool,
+                              std::shared_ptr<ell_EventLoop> loop, int fd,
                               ell_Ipv4Addr localAddr, ell_Ipv4Addr peerAddr) {
     localAddr_ = localAddr;
     peerAddr_ = peerAddr;
+    executor_pool_ = executor_pool;
 
     socket_.remake(fd);
     channel_.remake(loop, fd);
@@ -42,11 +45,12 @@ void ell_TcpConnector::remake(std::shared_ptr<ell_EventLoop> loop, int fd,
     channel_.enableClosing();
 }
 
-ell_TcpConnector::ell_TcpConnector(std::shared_ptr<ell_EventLoop> loop, int fd,
+ell_TcpConnector::ell_TcpConnector(std::shared_ptr<ell_ts_pool> executor_pool,
+                                   std::shared_ptr<ell_EventLoop> loop, int fd,
                                    ell_Ipv4Addr localAddr,
                                    ell_Ipv4Addr peerAddr)
     : localAddr_(localAddr), peerAddr_(peerAddr), socket_(fd),
-      channel_(loop, fd) {
+      channel_(loop, fd), executor_pool_(executor_pool) {
 
     channel_.set_readCallBack(std::bind(&ell_TcpConnector::handread, this));
     channel_.set_writeCallBack(std::bind(&ell_TcpConnector::handwrite, this));
@@ -72,44 +76,47 @@ void ell_TcpConnector::echo() {
     std::cout << "content: \n" << buf << std::endl;
 }
 
+// 这个函数被异步执行
+void ell_TcpConnector::work() {
+
+    ell::ell_message recm;
+    ell::ell_message retm;
+    handerMessageCall next = nullptr;
+
+    if (inbuffer_.tryReadMessage(recm)) {
+        if (handerMessage) {
+            handerMessage(&recm, &retm, (void *)&next);
+        }
+    }
+
+    if (next != nullptr) {
+        handerMessage = next;
+    }
+    int32_t len = retm.ByteSizeLong();
+    LOG("len: {} \n", len);
+    if (len > 0) {
+        outbuffer_.writeMessage(retm);
+        channel_.enableWriting();
+    }
+}
+
 void ell_TcpConnector::handread() {
+    LOG("hand read! \n");
     // echo();
     // return;
 
     inbuffer_.recv(socket_.fd());
 
-    ell::ell_message message;
-
-    if (inbuffer_.tryReadMessage(message)) {
-        ell::ell_message retm;
-
-        handerMessageCall nextmessagecall = nullptr;
-
-        if (handerMessage) {
-
-            handerMessage(&message, &retm, (void *)&nextmessagecall);
-            // 可以优化为异步处理
-
-            if (nextmessagecall != nullptr) {
-                handerMessage = nextmessagecall;
-            }
-            int32_t len = retm.ByteSizeLong();
-            LOG("len: {} \n", len);
-            if (len > 0) {
-                outbuffer_.writeMessage(retm);
-                channel_.enableWriting();
-            }
-        }
-    }
+    auto f = std::bind(&ell_TcpConnector::work, this);
+    executor_pool_->submit(std::move(f));
 }
 
 void ell_TcpConnector::set_handerMessageCall(handerMessageCall call) {
     handerMessage = std::move(call);
 }
 
+// 可以优化为异步执行
 void ell_TcpConnector::handwrite() {
-    // 可以优化为异步执行
-
     LOG("hand write! \n");
     outbuffer_.send(socket_.fd());
     channel_.disableWriting();

@@ -25,17 +25,13 @@ class ell_conn_pool {
     std::vector<std::shared_ptr<ell_EventLoop>> pool;
     int nth = 0;
 
-    std::shared_ptr<ell_ts_pool> executor_pool;
-
 public:
     ell_conn_pool(int nthreads) : done(false) {
         // unsigned const thread_count = std::thread::hardware_concurrency();
 
-        executor_pool = std::make_shared<ell_ts_pool>(1);    
-
         try {
             for (int i = 0; i < nthreads; ++i) {
-                auto eventloop = std::make_shared<ell_EventLoop>(executor_pool);
+                auto eventloop = std::make_shared<ell_EventLoop>();
                 auto t = std::jthread(&ell_EventLoop::loop, eventloop);
                 t.detach();
                 pool.push_back(eventloop);

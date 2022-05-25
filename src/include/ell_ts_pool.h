@@ -47,18 +47,18 @@ public:
     }
     ~ell_ts_pool() { done = true; }
 
-    // template <typename FunctionType>
-    // std::future<typename std::result_of<FunctionType()>::type>
-    // submit(FunctionType f) {
-    //     using result_type = typename std::result_of<FunctionType()>::type;
+    template <typename FunctionType>
+    std::future<typename std::result_of<FunctionType()>::type>
+    get_res(FunctionType f) {
+        using result_type = typename std::result_of<FunctionType()>::type;
 
-    //     std::packaged_task<result_type()> task(std::move(f));
-    //     std::future<result_type> res(task.get_future());
+        std::packaged_task<result_type()> task(std::move(f));
+        std::future<result_type> res(task.get_future());
 
-    //     work_queue.push(std::move(task));
+        work_queue.push(std::move(task));
 
-    //     return res;
-    // }
+        return res;
+    }
 
     template <typename FunctionType>
     void submit(FunctionType f) {

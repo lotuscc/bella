@@ -42,8 +42,6 @@ void ell_EventLoop::updateChannel(ell_Channel *channel) {
     poller_->updateChannel(channel);
 }
 
-ell_EventLoop::ell_EventLoop(std::shared_ptr<ell_ts_pool> pool) : pool_(pool) {
-    poller_ = std::make_unique<ell_EPoller>();
-}
+ell_EventLoop::ell_EventLoop() { poller_ = std::make_unique<ell_EPoller>(); }
 
 ell_EventLoop::~ell_EventLoop() {}

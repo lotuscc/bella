@@ -10,8 +10,13 @@
 
 using MessageCall = ell_TcpConnector::handerMessageCall;
 
+void sayhello2(ell::ell_message *m, ell::ell_message *ret, void *next) {
+    ret->set_content("hello2");
+}
+
 void sayhello(ell::ell_message *m, ell::ell_message *ret, void *next) {
     ret->set_content("hello");
+    *(MessageCall *)next = sayhello2;
 }
 
 int main() {

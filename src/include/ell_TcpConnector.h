@@ -13,6 +13,8 @@
 #include "ell_message.pb.h"
 #include "ell_outputBuffer.h"
 
+#include "ell_ts_pool.h"
+
 using ConnectionCallback = ell_Channel::EventCallBack;
 using MessageCallback = ell_Channel::EventCallBack;
 using WriteCompleteCallback = ell_Channel::EventCallBack;
@@ -33,6 +35,8 @@ private:
     ell_Socket socket_;
     ell_Channel channel_;
 
+    std::shared_ptr<ell_ts_pool> executor_pool_;
+
     handerMessageCall handerMessage;
 
     // ConnectionCallback connectionCallback_;
@@ -40,14 +44,16 @@ private:
     // WriteCompleteCallback writeCompleteCallback_;
     // HighWaterMarkCallback highWaterMarkCallback_;
 public:
-    void remake(std::shared_ptr<ell_EventLoop> loop, int fd, ell_Ipv4Addr localAddr,
-                ell_Ipv4Addr peerAddr);
+    void remake(std::shared_ptr<ell_ts_pool> executor_pool,
+                std::shared_ptr<ell_EventLoop> loop, int fd,
+                ell_Ipv4Addr localAddr, ell_Ipv4Addr peerAddr);
 
     void make_clean();
 
 public:
-    ell_TcpConnector(std::shared_ptr<ell_EventLoop> loop, int fd, ell_Ipv4Addr localAddr,
-                     ell_Ipv4Addr peerAddr);
+    ell_TcpConnector(std::shared_ptr<ell_ts_pool> executor_pool,
+                     std::shared_ptr<ell_EventLoop> loop, int fd,
+                     ell_Ipv4Addr localAddr, ell_Ipv4Addr peerAddr);
     ~ell_TcpConnector();
 
     ell_TcpConnector(const ell_TcpConnector &) = delete;
@@ -64,5 +70,6 @@ public:
 
     void set_handerMessageCall(handerMessageCall call);
 
+    void work();
     // ell_Channel *channel();
 };

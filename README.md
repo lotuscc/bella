@@ -21,6 +21,18 @@ Channel部件主要负责一个文件描述符上的事件处理。 EPoller部�
 *[简单文档](https://lotuscc.gitbook.io/ell-wang-luo-ku/)*
 
 
+# 主要架构介绍
+
+如图所示为系统的主要架构
+
+![Untitled](img/ell_main.svg)
+
+一个线程一个EventLoop
+
+系统中一个Acceptor线程负责接收新连接，一旦有新连接到来就接收生成Tcpconnector，并分配给一个Eventloop，负责后续的数据通信。
+
+Tcpconnector只负责数据的收发工作，将具体的数据接收完成后会生成一个work，交由worker异步处理，每个worker都是一个工作线程，负责处理Tcpconnector提交的任务。
+
 # Channel 简要介绍
 
 Linux系统上有一个非常重要的概念为：一切皆文件。

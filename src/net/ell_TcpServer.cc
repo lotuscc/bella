@@ -37,10 +37,6 @@ void ell_TcpServer::loop() {
 void ell_TcpServer::defaultConnection(int fd, ell_Ipv4Addr *peerAddr) {
     // 分配TCP连接
 
-    // auto client =
-    //     new ell_TcpConnector(pool_.getLoop(), fd, localAddr_, *peerAddr);
-    // client->set_handerMessageCall(messagecall_);
-
     if (Connectors_.contains(fd)) {
         Connectors_[fd]->remake(executor_pool, pool_.getLoop(), fd, localAddr_,
                                 *peerAddr);

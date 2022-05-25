@@ -25,7 +25,7 @@ Channel部件主要负责一个文件描述符上的事件处理。 EPoller部�
 
 如图所示为系统的主要架构
 
-![Untitled](%E4%B8%BB%E8%A6%81%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D%2088fe781114a64f22862869f1288439db/Untitled.svg)
+![Untitled](img/ell_main.svg)
 
 一个线程一个EventLoop
 

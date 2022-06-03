@@ -18,7 +18,7 @@ private:
     llhttp_t parser;
     llhttp_settings_t settings;
 
-    static ell_httpRequest http;
+    static ell_httpRequest httpRequest;
 
 public:
     ell_httpRequestParser();
@@ -28,6 +28,7 @@ public:
     ell_httpRequestParser &operator=(const ell_httpRequestParser &) = delete;
 
     ell_httpRequest execute(const char *data, size_t len);
+    bool execute(ell_httpRequest &_http, const char *data, size_t len);
 
 private:
     static int on_message_begin(llhttp_t *parser) {
@@ -44,8 +45,8 @@ private:
         std::string method(llhttp_method_name((llhttp_method_t)parser->method));
         printf("method: %s\n", method.c_str());
 
-        http.setMethod(method);
-        http.setURL(std::string(at, length));        
+        httpRequest.setMethod(method);
+        httpRequest.setURL(std::string(at, length));
 
         return 0;
     }
@@ -57,7 +58,7 @@ private:
         header_field[length] = '\0';
         printf("head field: %s\n", header_field);
 
-        http.appendHeaderField(std::string(at, length));
+        httpRequest.appendHeaderField(std::string(at, length));
 
         return 0;
     }
@@ -69,7 +70,7 @@ private:
         header_value[length] = '\0';
         printf("head value: %s\n", header_value);
 
-        http.appendHeaderValue(std::string(at, length));
+        httpRequest.appendHeaderValue(std::string(at, length));
 
         return 0;
     }
@@ -79,7 +80,7 @@ private:
                "upgrade: %d\n",
                parser->http_major, parser->http_minor,
                llhttp_should_keep_alive(parser), parser->upgrade);
-               
+
         return 0;
     }
 
@@ -89,7 +90,7 @@ private:
         body[length] = '\0';
         printf("on_body: %s\n", body);
 
-        http.setBody(std::string(at, length));
+        httpRequest.setBody(std::string(at, length));
 
         return 0;
     }

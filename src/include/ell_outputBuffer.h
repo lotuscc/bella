@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+#include "ell_httpResponse.h"
+
 class ell_outputBuffer {
     const static int kBUFFERSIZE = 1024;
 
@@ -27,5 +29,5 @@ public:
     // call by input buffer
     void send(int fd);
     void writeMessage(ell::ell_message &message);
-    void writeHttp();
+    void writeHttp(ell_httpResponse &response);
 };

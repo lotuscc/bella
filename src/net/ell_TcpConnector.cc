@@ -18,6 +18,9 @@
 #include "ell_TcpConnector.h"
 #include "ell_socketOps.h"
 
+#include "ell_httpRequest.h"
+#include "ell_httpResponse.h"
+
 using ConnectionCallback = ell_Channel::EventCallBack;
 using MessageCallback = ell_Channel::EventCallBack;
 using WriteCompleteCallback = ell_Channel::EventCallBack;
@@ -101,21 +104,30 @@ void ell_TcpConnector::work() {
 }
 
 void ell_TcpConnector::httpWork() {
-    inbuffer_.tryReadHttp();
-}
+    ell_httpRequest req;
+    ell_httpResponse resq;
+    resq.setVersion("HTTP/1.1");
+    resq.setStatus("200");
+    resq.setReasonPhrase("Ok");
+    resq.appendHeader("Content-Length", "13");
+    resq.setBody("hello, world!");
 
+    if (inbuffer_.tryReadHttp(req)) {
+        outbuffer_.writeHttp(resq);
+        channel_.enableWriting();
+    }
+}
 
 void ell_TcpConnector::handread() {
     LOG("hand read! \n");
-    // echo(); 
+    // echo();
     // return;
 
     inbuffer_.recv(socket_.fd());
 
-
     // 异步执行
     // auto f = std::bind(&ell_TcpConnector::work, this);
-    auto f = std::bind(&ell_TcpConnector::httpWork, this);   
+    auto f = std::bind(&ell_TcpConnector::httpWork, this);
     executor_pool_->submit(std::move(f));
 }
 

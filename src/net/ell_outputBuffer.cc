@@ -53,3 +53,11 @@ void ell_outputBuffer::writeMessage(ell::ell_message &message) {
 
     oWriteIdx_ += (len + 4);
 }
+
+void ell_outputBuffer::writeHttp(ell_httpResponse &response) {
+    auto space_len = kBUFFERSIZE - oWriteIdx_;
+
+    int len = response.SerializeToArray(&input_data_[oWriteIdx_], 0);
+
+    oWriteIdx_ += len;
+}

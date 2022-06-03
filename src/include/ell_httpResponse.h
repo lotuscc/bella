@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <string>
 #include <unordered_map>
 
@@ -21,4 +20,6 @@ public:
     void setReasonPhrase(std::string _reasonPhrase);
     void appendHeader(std::string _header_field, std::string _header_value);
     void setBody(std::string _body);
+
+    int SerializeToArray(char *data, int size);
 };

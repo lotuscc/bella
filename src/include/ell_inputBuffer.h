@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+#include "ell_httpRequest.h"
+
 class ell_inputBuffer {
     const static int kBUFFERSIZE = 1024;
 
@@ -28,7 +30,7 @@ public:
     std::string readMessage();
     bool tryReadMessage(ell::ell_message &message);
 
-    bool tryReadHttp();
+    bool tryReadHttp(ell_httpRequest &httpRequest);
 
     bool istry(void);
 };

@@ -28,5 +28,7 @@ public:
     std::string readMessage();
     bool tryReadMessage(ell::ell_message &message);
 
+    bool tryReadHttp();
+
     bool istry(void);
 };

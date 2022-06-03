@@ -10,6 +10,8 @@
 
 #include "ell_inputBuffer.h"
 
+#include "ell_httpRequestParser.h"
+
 void ell_inputBuffer::remake() {
     memset(output_data_, '\0', kBUFFERSIZE);
     iWriteIdx_ = 0;
@@ -67,6 +69,20 @@ bool ell_inputBuffer::tryReadMessage(ell::ell_message &message) {
 
         LOG("content: {} \n", content);
     }
+
+    return true;
+}
+
+
+bool ell_inputBuffer::tryReadHttp() {
+
+    const char *request =
+        "POST /index.html HTTP/1.1\r\nconnection:close\r\ncontent-length: "
+        "1\r\n\r\n1\r\n\r\n";
+    int request_len = strlen(request);
+
+    ell_httpRequestParser ellparser;
+    auto x = ellparser.execute(request, request_len);    
 
     return true;
 }

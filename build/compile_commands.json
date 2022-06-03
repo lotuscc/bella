@@ -1,92 +1,107 @@
 [
 {
   "directory": "/home/lotuscc/github_Project/bella/build/client",
-  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -g -g -o CMakeFiles/client.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -O0 -g -g -o CMakeFiles/client.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/client/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/client/main.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/server",
-  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -g -g -o CMakeFiles/server.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
+  "command": "/usr/bin/g++  -I/home/lotuscc/github_Project/bella/src/include -Wall --std=c++20 -O0 -g -g -o CMakeFiles/server.dir/main.cpp.o -c /home/lotuscc/github_Project/bella/server/main.cpp",
   "file": "/home/lotuscc/github_Project/bella/server/main.cpp"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_Channel.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_Channel.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_Channel.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_Channel.cc",
   "file": "/home/lotuscc/github_Project/bella/src/kernel/ell_Channel.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_EPoller.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_EPoller.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_EPoller.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_EPoller.cc",
   "file": "/home/lotuscc/github_Project/bella/src/kernel/ell_EPoller.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_EventLoop.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_EventLoop.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/kernel/ell_EventLoop.cc.o -c /home/lotuscc/github_Project/bella/src/kernel/ell_EventLoop.cc",
   "file": "/home/lotuscc/github_Project/bella/src/kernel/ell_EventLoop.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Ipv4Addr.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Ipv4Addr.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Ipv4Addr.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Ipv4Addr.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_Ipv4Addr.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Serves.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Serves.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Serves.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_Serves.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Socket.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_Socket.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_Socket.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_Socket.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpAcceptor.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpAcceptor.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpAcceptor.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpAcceptor.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_TcpAcceptor.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpClient.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpClient.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpClient.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpClient.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_TcpClient.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpConnector.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpConnector.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpConnector.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_TcpConnector.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpServer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpServer.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_TcpServer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_TcpServer.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_TcpServer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_inputBuffer.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_inputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_inputBuffer.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_inputBuffer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_outputBuffer.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_outputBuffer.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_outputBuffer.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_outputBuffer.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_shell.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_shell.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/net/ell_shell.cc.o -c /home/lotuscc/github_Project/bella/src/net/ell_shell.cc",
   "file": "/home/lotuscc/github_Project/bella/src/net/ell_shell.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/src/protobuf/ell_message.pb.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/protobuf/ell_message.pb.cc.o -c /home/lotuscc/github_Project/bella/src/protobuf/ell_message.pb.cc",
   "file": "/home/lotuscc/github_Project/bella/src/protobuf/ell_message.pb.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_Works.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_Works.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_Works.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_Works.cc",
   "file": "/home/lotuscc/github_Project/bella/src/ts/ell_Works.cc"
 },
 {
   "directory": "/home/lotuscc/github_Project/bella/build/src",
-  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -Wall --std=c++20 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_ts_pool.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_ts_pool.cc",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/ts/ell_ts_pool.cc.o -c /home/lotuscc/github_Project/bella/src/ts/ell_ts_pool.cc",
   "file": "/home/lotuscc/github_Project/bella/src/ts/ell_ts_pool.cc"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build/src",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/ell_http/ell_httpRequest.cpp.o -c /home/lotuscc/github_Project/bella/src/ell_http/ell_httpRequest.cpp",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_http/ell_httpRequest.cpp"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build/src",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/ell_http/ell_httpRequestParser.cpp.o -c /home/lotuscc/github_Project/bella/src/ell_http/ell_httpRequestParser.cpp",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_http/ell_httpRequestParser.cpp"
+},
+{
+  "directory": "/home/lotuscc/github_Project/bella/build/src",
+  "command": "/usr/bin/g++ -Dell_EXPORTS -I/home/lotuscc/github_Project/bella/src/./include -I/home/lotuscc/github_Project/bella/llhttp -Wall --std=c++20 -O0 -g -g -fPIC -o CMakeFiles/ell.dir/ell_http/ell_httpResponse.cpp.o -c /home/lotuscc/github_Project/bella/src/ell_http/ell_httpResponse.cpp",
+  "file": "/home/lotuscc/github_Project/bella/src/ell_http/ell_httpResponse.cpp"
 }
 ]

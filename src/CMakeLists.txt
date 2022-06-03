@@ -3,6 +3,8 @@ aux_source_directory(kernel DIR_LIBS_SRCS)
 aux_source_directory(net DIR_LIBS_SRCS)
 aux_source_directory(protobuf DIR_LIBS_SRCS)
 aux_source_directory(ts DIR_LIBS_SRCS)
+aux_source_directory(ell_http DIR_LIBS_SRCS)
+
 
 include_directories(
     ./include
@@ -25,3 +27,6 @@ target_include_directories(ell INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 
+include_directories( ${CMAKE_SOURCE_DIR}/llhttp)
+target_link_directories(ell PUBLIC ${CMAKE_SOURCE_DIR}/llhttp)
+target_link_libraries(ell llhttp)

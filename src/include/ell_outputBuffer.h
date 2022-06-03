@@ -15,8 +15,6 @@ class ell_outputBuffer {
     int oWriteIdx_ = 0;
     int oReadIdx_ = 0;
 
-
-
 public:
     void remake();
 
@@ -29,5 +27,5 @@ public:
     // call by input buffer
     void send(int fd);
     void writeMessage(ell::ell_message &message);
+    void writeHttp();
 };
-

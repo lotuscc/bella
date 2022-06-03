@@ -239,7 +239,7 @@ demo_BINARY_DIR:STATIC=/home/lotuscc/github_Project/bella/build
 demo_SOURCE_DIR:STATIC=/home/lotuscc/github_Project/bella
 
 //Dependencies for the target
-ell_LIB_DEPENDS:STATIC=general;/usr/local/lib/libprotobuf.so;general;-lpthread;general;-lpthread;
+ell_LIB_DEPENDS:STATIC=general;/usr/local/lib/libprotobuf.so;general;-lpthread;general;-lpthread;general;llhttp;
 
 
 ########################

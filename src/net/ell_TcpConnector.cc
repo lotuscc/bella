@@ -100,14 +100,22 @@ void ell_TcpConnector::work() {
     }
 }
 
+void ell_TcpConnector::httpWork() {
+    inbuffer_.tryReadHttp();
+}
+
+
 void ell_TcpConnector::handread() {
     LOG("hand read! \n");
-    // echo();
+    // echo(); 
     // return;
 
     inbuffer_.recv(socket_.fd());
 
-    auto f = std::bind(&ell_TcpConnector::work, this);
+
+    // 异步执行
+    // auto f = std::bind(&ell_TcpConnector::work, this);
+    auto f = std::bind(&ell_TcpConnector::httpWork, this);   
     executor_pool_->submit(std::move(f));
 }
 

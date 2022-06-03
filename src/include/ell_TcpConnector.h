@@ -71,5 +71,8 @@ public:
     void set_handerMessageCall(handerMessageCall call);
 
     void work();
+
+    void httpWork();
+
     // ell_Channel *channel();
 };
